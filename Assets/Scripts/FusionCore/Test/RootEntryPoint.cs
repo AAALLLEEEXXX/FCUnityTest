@@ -12,6 +12,9 @@ namespace FusionCore.Test
 		[SerializeField] 
 		private MainMenuView _mainMenuView;
 		
+		[SerializeField] 
+		private FightWindowView _fightWindowView;
+		
 		[SerializeField]
 		private SpawnPoint[] _spawns;
 		
@@ -20,7 +23,7 @@ namespace FusionCore.Test
 		[SerializeField]
 		private CharacterPrefab[] _characters;
 		
-		private Battlefield _battlefield;
+		private FightController _fightController;
 		
 		private readonly CompositeDisposable _disposables = new CompositeDisposable();
 
@@ -39,17 +42,14 @@ namespace FusionCore.Test
 		private void Initialize()
 		{
 			new MainMenuController(_mainMenuView, _gameModel).AddTo(_disposables);
-			new FightController(_gameModel).AddTo(_disposables);
-			
-			
-			_battlefield = new Battlefield(_spawns);
-			_battlefield.Start(_characters);
+			new FightWindowController(_fightWindowView, _gameModel).AddTo(_disposables);
+			_fightController = new FightController(_gameModel, _spawns, _characters).AddTo(_disposables);
 			
 		}
 
 		public void Update()
 		{
-			_battlefield.Update(Time.deltaTime);
+			_fightController.Update();
 		}
 
 		private void OnDestroy()

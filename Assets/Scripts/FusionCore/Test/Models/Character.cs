@@ -16,7 +16,7 @@ namespace FusionCore.Test.Models
 
 		private readonly CharacterPrefab _prefab;
 		private readonly Weapon _weapon;
-		private readonly Battlefield _battlefield;
+		private readonly FightController _fightController;
 
 		private float _health;
 		private float _armor;
@@ -25,11 +25,11 @@ namespace FusionCore.Test.Models
 		private Character _currentTarget;
 		private float _time;
 
-		public Character(CharacterPrefab prefab, Weapon weapon, Battlefield battlefield)
+		public Character(CharacterPrefab prefab, Weapon weapon, FightController fightController)
 		{
 			_prefab = prefab;
 			_weapon = weapon;
-			_battlefield = battlefield;
+			_fightController = fightController;
 			CharacterDescriptor descriptor = _prefab.GetComponent<CharacterDescriptor>();
 			_health = descriptor.MaxHealth;
 			_armor = descriptor.MaxArmor;
@@ -61,7 +61,7 @@ namespace FusionCore.Test.Models
 					case State.Idle:
 						_prefab.Animator.SetBool("aiming", false);
 						_prefab.Animator.SetBool("reloading", false);
-						if (_battlefield.TryGetNearestAliveEnemy(this, out Character target))
+						if (_fightController.TryGetNearestAliveEnemy(this, out Character target))
 						{
 							_currentTarget = target;
 							_state = State.Aiming;

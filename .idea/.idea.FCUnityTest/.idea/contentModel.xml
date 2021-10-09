@@ -13,11 +13,11 @@
                 <e p="CharacterDescriptor.cs" t="Include" />
                 <e p="WeaponDescriptor.cs" t="Include" />
               </e>
-              <e p="FightController.cs" t="Include" />
+              <e p="DisposeUtils.cs" t="Include" />
               <e p="GameState.cs" t="Include" />
               <e p="Models" t="Include">
-                <e p="Battlefield.cs" t="Include" />
                 <e p="Character.cs" t="Include" />
+                <e p="FightController.cs" t="Include" />
                 <e p="GameModel.cs" t="Include" />
                 <e p="Weapon.cs" t="Include" />
               </e>
@@ -31,6 +31,9 @@
               </e>
             </e>
             <e p="Ui" t="Include">
+              <e p="FightWindowController.cs" t="Include" />
+              <e p="FightWindowView.cs" t="Include" />
+              <e p="IndicatorView.cs" t="Include" />
               <e p="MainMenuController.cs" t="Include" />
               <e p="MainMenuView.cs" t="Include" />
             </e>

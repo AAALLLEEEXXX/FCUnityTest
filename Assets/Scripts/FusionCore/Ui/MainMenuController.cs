@@ -39,7 +39,7 @@ namespace FusionCore.Ui
             _gameModel.CurrentGameState.Value = GameState.Fight;
         }
 
-        public void RefreshWindow(GameState gameState)
+        private void RefreshWindow(GameState gameState)
         {
             switch (gameState)
             {
