@@ -1,0 +1,5 @@
+﻿<linker>
+    <assembly fullname="UniRx.Async">
+        <type fullname="UniRx.Async.UniTask" preserve="all"/>
+    </assembly>
+</linker>

@@ -6,14 +6,17 @@ namespace FusionCore.Test.Models
 {
 	public class Battlefield
 	{
-		private readonly Dictionary<uint, List<Vector3>> _spawnPositionsByTeam;
 		private readonly Dictionary<uint, List<Character>> _charactersByTeam;
 
+		private SpawnPoint[] _spawnPoints;
+		
+		
 		private bool _paused;
 
-		public Battlefield(Dictionary<uint, List<Vector3>> spawnPositionsByTeam)
+		public Battlefield(SpawnPoint[] spawnPoints)
 		{
-			_spawnPositionsByTeam = spawnPositionsByTeam;
+			_spawnPoints = spawnPoints;
+
 			_charactersByTeam = new Dictionary<uint, List<Character>>();
 		}
 
@@ -22,17 +25,19 @@ namespace FusionCore.Test.Models
 			_paused = false;
 			_charactersByTeam.Clear();
 
-			List<CharacterPrefab> availablePrefabs = new List<CharacterPrefab>(prefabs);
-			foreach (var positionsPair in _spawnPositionsByTeam)
+			var availablePrefabs = new List<CharacterPrefab>(prefabs);
+			
+			foreach (var positionsPair in _spawnPoints)
 			{
-				List<Vector3> positions = positionsPair.Value;
-				List<Character> characters = new List<Character>();
-				_charactersByTeam.Add(positionsPair.Key, characters);
+				var positions = positionsPair.PointsView;
+				var characters = new List<Character>();
+				_charactersByTeam.Add(positionsPair.Team, characters);
+				
 				int i = 0;
-				while (i < positions.Count && availablePrefabs.Count > 0)
+				while (i < positions.Length && availablePrefabs.Count > 0)
 				{
 					int index = Random.Range(0, availablePrefabs.Count);
-					characters.Add(CreateCharacterAt(availablePrefabs[index], this, positions[i]));
+					characters.Add(CreateCharacterAt(availablePrefabs[index], this, positions[i].transform.position));
 					availablePrefabs.RemoveAt(index);
 					i++;
 				}

@@ -1,0 +1,15 @@
+{
+    "name": "UniRx.Async",
+    "references": [
+        "GUID:741b693a99e9a4c2c9f6401546dbeb22"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

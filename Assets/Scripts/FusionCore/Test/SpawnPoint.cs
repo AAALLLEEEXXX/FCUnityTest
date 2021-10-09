@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+using System;
 
 namespace FusionCore.Test
 {
-	public class SpawnPoint : MonoBehaviour
-	{
-		public uint Team;
-	}
+    [Serializable]
+    public class SpawnPoint
+    {
+        public uint Team;
+        public PointView[] PointsView;
+    }
 }

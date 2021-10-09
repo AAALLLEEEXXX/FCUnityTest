@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a837a916-5acd-46ac-bc77-b21a76eb9c4a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.fc_unity_test-master/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.fc_unity_test-master/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Bootstrapper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/GameState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Battlefield.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Battlefield.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/PointView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/PointView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/MainMenuController.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/GameModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/FightController.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Bootstrapper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/BaseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/GameModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/MainMenuController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/GameState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/MainController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/FightController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/PointView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Battlefield.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1zH9rptKoZpC4ZzxBxNpODCNCBU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19616">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="19616" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a837a916-5acd-46ac-bc77-b21a76eb9c4a" name="Default Changelist" comment="" />
+      <created>1633794347335</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633794347335</updated>
+      <workItem from="1633794356348" duration="6321000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="496" height="464" key="DebuggerActiveHint" timestamp="1633799160524">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="496" height="464" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1633799160524" />
+    <state width="2502" height="453" key="GridCell.Tab.0.bottom" timestamp="1633798951236">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2502" height="453" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1633798951236" />
+    <state width="2502" height="453" key="GridCell.Tab.0.center" timestamp="1633798951236">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2502" height="453" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1633798951236" />
+    <state width="2502" height="453" key="GridCell.Tab.0.left" timestamp="1633798951236">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2502" height="453" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1633798951236" />
+    <state width="2502" height="453" key="GridCell.Tab.0.right" timestamp="1633798951236">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2502" height="453" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633798951236" />
+    <state width="2502" height="453" key="GridCell.Tab.1.bottom" timestamp="1633798977283">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2502" height="453" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1633798977283" />
+    <state width="2502" height="453" key="GridCell.Tab.1.center" timestamp="1633798977283">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2502" height="453" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1633798977283" />
+    <state width="2502" height="453" key="GridCell.Tab.1.left" timestamp="1633798977282">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2502" height="453" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1633798977282" />
+    <state width="2502" height="453" key="GridCell.Tab.1.right" timestamp="1633798977283">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2502" height="453" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633798977283" />
+    <state x="1160" y="799" key="RiderGenerateDialog" timestamp="1633796217464">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1160" y="799" key="RiderGenerateDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1633796217464" />
+    <state x="978" y="382" width="672" height="678" key="search.everywhere.popup" timestamp="1633798323030">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="978" y="382" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1633798323030" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs</url>
+          <line>44</line>
+          <properties documentPath="C:\Users\Admin\Desktop\FCUnityTest\Assets\Scripts\FusionCore\Test\RootEntryPoint.cs" initialLine="56">
+            <startOffsets>
+              <option value="847" />
+            </startOffsets>
+            <endOffsets>
+              <option value="887" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
