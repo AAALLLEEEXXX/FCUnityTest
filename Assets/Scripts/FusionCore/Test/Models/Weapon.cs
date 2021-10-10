@@ -6,27 +6,27 @@ namespace FusionCore.Test.Models
 {
 	public class Weapon
 	{
-		private readonly WeaponPrefab _prefab;
+		private WeaponView _weaponView;
 
 		private uint _ammo;
 
 		private bool _ready;
 		private float _time;
 
-		public Weapon(WeaponPrefab prefab)
+		public Weapon(WeaponView weaponView)
 		{
-			_prefab = prefab;
-			_ammo = _prefab.GetComponent<WeaponDescriptor>().ClipSize;
+			_weaponView = weaponView;
+			_ammo = _weaponView.WeaponDescriptor.ClipSize;
 		}
 
 		public bool IsReady => _ready;
 		public bool HasAmmo => _ammo > 0;
 
-		public WeaponPrefab Prefab => _prefab;
+		public WeaponView WeaponView => _weaponView;
 
 		public void Reload()
 		{
-			_ammo = _prefab.GetComponent<WeaponDescriptor>().ClipSize;
+			_ammo = _weaponView.WeaponDescriptor.ClipSize;
 		}
 
 		public void Fire(Character character, bool hit)
@@ -35,7 +35,7 @@ namespace FusionCore.Test.Models
 			{
 				_ammo -= 1;
 				FireBullet(character, hit);
-				_time = 1.0f / _prefab.GetComponent<WeaponDescriptor>().FireRate;
+				_time = 1.0f / _weaponView.WeaponDescriptor.FireRate;
 				_ready = false;
 			}
 		}
@@ -43,9 +43,8 @@ namespace FusionCore.Test.Models
 		
 		private void FireBullet(Character character, bool hit)
 		{
-			var bullet = Object.Instantiate(_prefab.BulletPrefab, _prefab.BarrelTransform);
-			bullet.transform.position = _prefab.BarrelTransform.position;
-			bullet.Init(_prefab, character, hit);
+			var bullet = Object.Instantiate(_weaponView.BulletPrefab, _weaponView.BarrelTransform);
+			bullet.Init(_weaponView, character, hit);
 		}
 
 		public void Update(float deltaTime)
@@ -54,13 +53,9 @@ namespace FusionCore.Test.Models
 				return;
 			
 			if (_time > 0)
-			{
 				_time -= deltaTime;
-			}
 			else
-			{
 				_ready = true;
-			}
 		}
 	}
 }

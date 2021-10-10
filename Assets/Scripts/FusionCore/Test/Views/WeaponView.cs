@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using FusionCore.Test.Descriptors;
+using UnityEngine;
 
 namespace FusionCore.Test.Views
 {
-	public class WeaponPrefab : MonoBehaviour
+	public class WeaponView : MonoBehaviour
 	{
 		[SerializeField]
 		private Transform _barrelTransform;
@@ -10,8 +11,13 @@ namespace FusionCore.Test.Views
 		[SerializeField]
 		private BulletPrefab _bulletPrefab;
 
+		[SerializeField] 
+		private WeaponDescriptor _weaponDescriptor;
+
 		public Transform BarrelTransform => _barrelTransform;
 		
 		public BulletPrefab BulletPrefab => _bulletPrefab;
+		
+		public WeaponDescriptor WeaponDescriptor => _weaponDescriptor;
 	}
 }

@@ -7,7 +7,7 @@ namespace FusionCore.Test.Views
 	public class BulletPrefab : MonoBehaviour
 	{
 		private Character _target;
-		private WeaponPrefab _weapon;
+		private WeaponView _weapon;
 		private bool _hit;
 
 		private Vector3 _position;
@@ -15,7 +15,7 @@ namespace FusionCore.Test.Views
 		private float _totalDistance;
 		private float _currentDistance;
 
-		public void Init(WeaponPrefab weapon, Character target, bool hit)
+		public void Init(WeaponView weapon, Character target, bool hit)
 		{
 			_weapon = weapon;
 			_target = target;
@@ -40,7 +40,7 @@ namespace FusionCore.Test.Views
 				if (_hit)
 				{
 					var weaponDescriptor = _weapon.GetComponent<WeaponDescriptor>();
-					var targetDescriptor = _target.Prefab.GetComponent<CharacterDescriptor>();
+					var targetDescriptor = _target.CharacterView.GetComponent<CharacterDescriptor>();
 					var damage = weaponDescriptor.Damage;
 					
 					if (_target.Armor > 0)
@@ -48,7 +48,7 @@ namespace FusionCore.Test.Views
 					else if (_target.Health > 0)
 						_target.Health -= damage;
 					if (_target.Armor <= 0 && _target.Health <= 0)
-						_target.Prefab.Animator.SetTrigger("die");
+						_target.CharacterView.Animator.SetTrigger("die");
 				}
 				Destroy(gameObject);
 			}

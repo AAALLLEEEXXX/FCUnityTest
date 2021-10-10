@@ -1,5 +1,4 @@
-﻿using FusionCore.Test.Descriptors;
-using FusionCore.Test.Views;
+﻿using FusionCore.Test.Views;
 using UnityEngine;
 
 namespace FusionCore.Test.Models
@@ -14,7 +13,7 @@ namespace FusionCore.Test.Models
 			Reloading
 		}
 
-		private readonly CharacterPrefab _prefab;
+		private readonly CharacterView _characterView;
 		private readonly Weapon _weapon;
 		private readonly FightController _fightController;
 
@@ -24,15 +23,19 @@ namespace FusionCore.Test.Models
 		private State _state;
 		private Character _currentTarget;
 		private float _time;
+		
+		private static readonly int Aiming = Animator.StringToHash("aiming");
+		private static readonly int Reloading = Animator.StringToHash("reloading");
+		private static readonly int ReloadTime = Animator.StringToHash("reload_time");
+		private static readonly int Shoot = Animator.StringToHash("shoot");
 
-		public Character(CharacterPrefab prefab, Weapon weapon, FightController fightController)
+		public Character(CharacterView characterView, Weapon weapon, FightController fightController)
 		{
-			_prefab = prefab;
+			_characterView = characterView;
 			_weapon = weapon;
 			_fightController = fightController;
-			CharacterDescriptor descriptor = _prefab.GetComponent<CharacterDescriptor>();
-			_health = descriptor.MaxHealth;
-			_armor = descriptor.MaxArmor;
+			_health = _characterView.CharacterDescriptor.MaxHealth;
+			_armor = _characterView.CharacterDescriptor.MaxArmor;
 		}
 
 		public bool IsAlive => _health > 0 || _armor > 0;
@@ -49,8 +52,8 @@ namespace FusionCore.Test.Models
 			set => _armor = value;
 		}
 
-		public CharacterPrefab Prefab => _prefab;
-		public Vector3 Position => _prefab.transform.position;
+		public CharacterView CharacterView => _characterView;
+		public Vector3 Position => _characterView.transform.position;
 
 		public void Update(float deltaTime)
 		{
@@ -59,19 +62,20 @@ namespace FusionCore.Test.Models
 				switch (_state)
 				{
 					case State.Idle:
-						_prefab.Animator.SetBool("aiming", false);
-						_prefab.Animator.SetBool("reloading", false);
+						_characterView.Animator.SetBool(Aiming, false);
+						_characterView.Animator.SetBool(Reloading, false);
 						if (_fightController.TryGetNearestAliveEnemy(this, out Character target))
 						{
 							_currentTarget = target;
 							_state = State.Aiming;
-							_time = _prefab.GetComponent<CharacterDescriptor>().AimTime;
-							_prefab.transform.LookAt(_currentTarget.Position);
+							_time = _characterView.CharacterDescriptor.AimTime;
+							_characterView.transform.LookAt(_currentTarget.Position);
 						}
 						break;
+					
 					case State.Aiming:
-						_prefab.Animator.SetBool("aiming", true);
-						_prefab.Animator.SetBool("reloading", false);
+						_characterView.Animator.SetBool(Aiming, true);
+						_characterView.Animator.SetBool(Reloading, false);
 						if (_currentTarget != null && _currentTarget.IsAlive)
 						{
 							if (_time > 0)
@@ -90,9 +94,10 @@ namespace FusionCore.Test.Models
 							_time = 0;
 						}
 						break;
+					
 					case State.Shooting:
-						_prefab.Animator.SetBool("aiming", true);
-						_prefab.Animator.SetBool("reloading", false);
+						_characterView.Animator.SetBool(Aiming, true);
+						_characterView.Animator.SetBool(Reloading, false);
 						if (_currentTarget != null && _currentTarget.IsAlive)
 						{
 							if (_weapon.HasAmmo)
@@ -100,11 +105,11 @@ namespace FusionCore.Test.Models
 								if (_weapon.IsReady)
 								{
 									float random = Random.Range(0.0f, 1.0f);
-									bool hit = random <= _prefab.GetComponent<CharacterDescriptor>().Accuracy &&
-											random <= _weapon.Prefab.GetComponent<WeaponDescriptor>().Accuracy &&
-											random >= _currentTarget.Prefab.GetComponent<CharacterDescriptor>().Dexterity;
+									bool hit = random <= _characterView.CharacterDescriptor.Accuracy &&
+											random <= _weapon.WeaponView.WeaponDescriptor.Accuracy &&
+											random >= _currentTarget.CharacterView.CharacterDescriptor.Dexterity;
 									_weapon.Fire(_currentTarget, hit);
-									_prefab.Animator.SetTrigger("shoot");
+									_characterView.Animator.SetTrigger(Shoot);
 								}
 								else
 								{
@@ -114,7 +119,7 @@ namespace FusionCore.Test.Models
 							else
 							{
 								_state = State.Reloading;
-								_time = _weapon.Prefab.GetComponent<WeaponDescriptor>().ReloadTime;
+								_time = _weapon.WeaponView.WeaponDescriptor.ReloadTime;
 							}
 						}
 						else
@@ -122,10 +127,11 @@ namespace FusionCore.Test.Models
 							_state = State.Idle;
 						}
 						break;
+					
 					case State.Reloading:
-						_prefab.Animator.SetBool("aiming", true);
-						_prefab.Animator.SetBool("reloading", true);
-						_prefab.Animator.SetFloat("reload_time", _weapon.Prefab.GetComponent<WeaponDescriptor>().ReloadTime / 3.3f);
+						_characterView.Animator.SetBool(Aiming, true);
+						_characterView.Animator.SetBool(Reloading, true);
+						_characterView.Animator.SetFloat(ReloadTime, _weapon.WeaponView.WeaponDescriptor.ReloadTime / 3.3f);
 						if (_time > 0)
 						{
 							_time -= deltaTime;

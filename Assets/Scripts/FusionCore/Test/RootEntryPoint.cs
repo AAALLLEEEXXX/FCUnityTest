@@ -21,7 +21,7 @@ namespace FusionCore.Test
 		
 		
 		[SerializeField]
-		private CharacterPrefab[] _characters;
+		private CharacterView[] _characters;
 		
 		private FightController _fightController;
 		

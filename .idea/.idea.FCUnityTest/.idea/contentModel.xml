@@ -26,8 +26,8 @@
               <e p="SpawnPoint.cs" t="Include" />
               <e p="Views" t="Include">
                 <e p="BulletPrefab.cs" t="Include" />
-                <e p="CharacterPrefab.cs" t="Include" />
-                <e p="WeaponPrefab.cs" t="Include" />
+                <e p="CharacterView.cs" t="Include" />
+                <e p="WeaponView.cs" t="Include" />
               </e>
             </e>
             <e p="Ui" t="Include">

@@ -16,10 +16,10 @@ namespace FusionCore.Test.Models
 		private readonly Dictionary<uint, List<Character>> _charactersByTeam;
 
 		private SpawnPoint[] _spawnPoints;
-		private CharacterPrefab[] _characters;
+		private CharacterView[] _characters;
 		private GameModel _gameModel;
 
-		public FightController(GameModel gameModel, SpawnPoint[] spawnPoints, CharacterPrefab[] characters)
+		public FightController(GameModel gameModel, SpawnPoint[] spawnPoints, CharacterView[] characters)
 		{
 			_spawnPoints = spawnPoints;
 			_characters = characters;
@@ -122,18 +122,17 @@ namespace FusionCore.Test.Models
 				foreach (var charactersPair in _charactersByTeam)
 				{
 					var characters = charactersPair.Value;
-					foreach (Character character in characters)
-					{
+					
+					foreach (var character in characters)
 						character.Update(Time.deltaTime);
-					}
 				}
 			}
 		}
 
-		private Character CreateCharacterAt(CharacterPrefab prefab, FightController fightController, Vector3 position)
+		private Character CreateCharacterAt(CharacterView view, FightController fightController, Vector3 position)
 		{
-			var character = Object.Instantiate(prefab, position, Quaternion.identity);
-			return new Character(character, new Weapon(character.Weapon), fightController);
+			var character = Object.Instantiate(view, position, Quaternion.identity);
+			return new Character(character, new Weapon(character.WeaponView), fightController);
 		}
 
 		public void Dispose()

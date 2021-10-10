@@ -1042,8 +1042,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f106856823f42fc4ebee584045cccc25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapon: {fileID: 1489346763145143328}
-  Animator: {fileID: 3201467491750498114}
+  _weaponView: {fileID: 1489346763145143328}
+  _characterDescriptor: {fileID: 3875004563385990025}
+  _animator: {fileID: 3201467491750498114}
   _rightPalm: {fileID: 6112073874855535963}
 --- !u!114 &3875004563385990025
 MonoBehaviour:
@@ -1061,7 +1062,6 @@ MonoBehaviour:
   Dexterity: 0.2
   MaxHealth: 100
   MaxArmor: 100
-  ArmorType: 3
   AimTime: 2.5
 --- !u!1 &9136827948821724094
 GameObject:

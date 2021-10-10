@@ -20,16 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a837a916-5acd-46ac-bc77-b21a76eb9c4a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/FightController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/FightController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Battlefield.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Battlefield.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Engineer/Engineer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Engineer/Engineer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Engineer/EngineerWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Engineer/EngineerWeapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Gamer/Gamer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Gamer/Gamer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Gamer/GamerWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Gamer/GamerWeapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Indian/Indian.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Indian/Indian.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Indian/IndianWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Indian/IndianWeapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Monk/Monk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Monk/Monk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Monk/MonkWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Monk/MonkWeapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Pirate/Pirate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Pirate/Pirate.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Pirate/PirateWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Pirate/PirateWeapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Sniper/Sniper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Sniper/Sniper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Sniper/SniperWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Sniper/SniperWeapon.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/MainMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/BulletPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/BulletPrefab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterPrefab.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterPrefab.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/WeaponPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/WeaponView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/WeaponPrefab.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/WeaponView.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +76,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/DisposeUtils.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/FightWindowView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/MainMenuController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/FightWindowController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/IndicatorView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/WeaponView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterPrefab.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Character.cs" />
       </list>
     </option>
   </component>
@@ -93,10 +112,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19616">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="19616" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -112,6 +131,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633794347335</updated>
       <workItem from="1633794356348" duration="11907000" />
+      <workItem from="1633892361878" duration="2695000" />
     </task>
     <servers />
   </component>
@@ -130,6 +150,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -207,10 +228,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1160" y="749" key="RiderGenerateDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1633806649018" />
-    <state x="978" y="382" width="672" height="678" key="search.everywhere.popup" timestamp="1633798323030">
+    <state x="-316" y="806" width="2360" height="1044" key="VCS.FileHistoryDialog" timestamp="1633894667622">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="978" y="382" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1633798323030" />
+    <state x="-316" y="806" width="2360" height="1044" key="VCS.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1633894667622" />
+    <state x="979" y="381" width="672" height="678" key="search.everywhere.popup" timestamp="1633894594416">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="979" y="381" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1633894594416" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -220,10 +245,10 @@
           <line>45</line>
           <properties documentPath="C:\Users\Admin\Desktop\FCUnityTest\Assets\Scripts\FusionCore\Test\RootEntryPoint.cs" initialLine="56">
             <startOffsets>
-              <option value="938" />
+              <option value="936" />
             </startOffsets>
             <endOffsets>
-              <option value="1031" />
+              <option value="1029" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
@@ -233,10 +258,10 @@
           <line>119</line>
           <properties documentPath="C:\Users\Admin\Desktop\FCUnityTest\Assets\Scripts\FusionCore\Test\Models\FightController.cs" initialLine="131">
             <startOffsets>
-              <option value="2804" />
+              <option value="2800" />
             </startOffsets>
             <endOffsets>
-              <option value="2861" />
+              <option value="2857" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />

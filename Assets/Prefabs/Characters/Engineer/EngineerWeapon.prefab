@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _barrelTransform: {fileID: 4206654585415172284}
   _bulletPrefab: {fileID: 8308922753951757661, guid: 9b7ee3ebe18995f44983326e18a9514e, type: 3}
+  _weaponDescriptor: {fileID: 908425352074759097}
 --- !u!114 &908425352074759097
 MonoBehaviour:
   m_ObjectHideFlags: 0

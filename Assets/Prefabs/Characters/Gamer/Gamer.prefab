@@ -59,8 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f106856823f42fc4ebee584045cccc25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapon: {fileID: 1205181526271509079}
-  Animator: {fileID: 9107763671635735042}
+  _weaponView: {fileID: 1205181526271509079}
+  _characterDescriptor: {fileID: 5573467520974606407}
+  _animator: {fileID: 9107763671635735042}
   _rightPalm: {fileID: 493937710239864859}
 --- !u!114 &5573467520974606407
 MonoBehaviour:
@@ -78,7 +79,6 @@ MonoBehaviour:
   Dexterity: 0.25
   MaxHealth: 100
   MaxArmor: 100
-  ArmorType: 4
   AimTime: 3.5
 --- !u!1001 &3558008030345202616
 PrefabInstance:
