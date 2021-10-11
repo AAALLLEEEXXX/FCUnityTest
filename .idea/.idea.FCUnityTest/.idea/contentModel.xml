@@ -10,6 +10,13 @@
           <e p="FusionCore" t="Include">
             <e p="Test" t="Include">
               <e p="CharacterModel.cs" t="Include" />
+              <e p="CharacterState" t="Include">
+                <e p="AimingCharacterState.cs" t="Include" />
+                <e p="BaseCharacterState.cs" t="Include" />
+                <e p="IdleCharacterState.cs" t="Include" />
+                <e p="ReloadingCharacterState.cs" t="Include" />
+                <e p="ShootingCharacterState.cs" t="Include" />
+              </e>
               <e p="Data" t="Include">
                 <e p="CharacterPreset.cs" t="Include" />
               </e>

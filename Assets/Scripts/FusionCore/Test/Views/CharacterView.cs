@@ -1,5 +1,4 @@
-﻿using FusionCore.Test.Descriptors;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace FusionCore.Test.Views
 {

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using FusionCore.Test.Data;
-using FusionCore.Test.Views;
 using UniRx;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -54,8 +53,7 @@ namespace FusionCore.Test.Models
 			foreach (var character in _fightService.SpawnCharacters)
 				character.Update();
 		}
-
-
+		
 		private void SpawnCharactersInBattlefield(SpawnPoint[] spawnPoints, CharacterPreset[] characters)
 		{
 			foreach (var positionsPair in spawnPoints)
@@ -64,7 +62,7 @@ namespace FusionCore.Test.Models
 				{
 					var index = Random.Range(0, characters.Length);
 					var spawnCharacter = CreateCharacterAt(characters[index], spawn.transform.position, positionsPair.Team);
-					_fightService.SpawnCharacters.Add(spawnCharacter);
+					_spawnCharacters.Add(spawnCharacter);
 				}
 			}
 		}
@@ -72,8 +70,11 @@ namespace FusionCore.Test.Models
 		private void ClearBattlefield()
 		{
 			foreach (var character in _spawnCharacters)
-				Object.Destroy(character.CharacterView);
-            
+			{
+				character.Dispose();
+				Object.Destroy(character.Model.CharacterView);
+			}
+			
 			_spawnCharacters.Clear();
 		}
 		

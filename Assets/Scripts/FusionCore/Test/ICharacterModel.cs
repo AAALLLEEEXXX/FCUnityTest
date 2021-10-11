@@ -25,5 +25,7 @@ namespace FusionCore.Test
         public float Accuracy { get; }
         
         public IReactiveProperty<CharacterModel> CurrentTarget { get; }
+        
+        public IReactiveProperty<PersonState> PersonState { get; }
     }
 }

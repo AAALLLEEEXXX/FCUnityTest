@@ -22,12 +22,11 @@
     <list default="true" id="a837a916-5acd-46ac-bc77-b21a76eb9c4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/ICharacterModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/ICharacterModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Character.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/BulletPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/BulletPrefab.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs" afterDir="false" />
     </list>
@@ -44,6 +43,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/DisposeUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/ICharacterModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterState/BaseCharacterState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterState/IdleCharacterState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CFC1AD89-0650-411E-946C-FF2E6F276711/a1/569c6f0a/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/GameModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/FightWindowController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -79,16 +80,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnCharacterService.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/IFightController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/ICharacter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/FightService.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/BulletPrefab.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Data/CharacterPreset.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/ICharacterModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterState/BaseCharacterState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/BulletPrefab.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterState/IdleCharacterState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterState/AimingCharacterState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterState/ReloadingCharacterState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterState/ShootingCharacterState.cs" />
       </list>
     </option>
   </component>
@@ -136,7 +142,7 @@
       <updated>1633794347335</updated>
       <workItem from="1633794356348" duration="11907000" />
       <workItem from="1633892361878" duration="8163000" />
-      <workItem from="1633933048272" duration="8655000" />
+      <workItem from="1633933048272" duration="14721000" />
     </task>
     <servers />
   </component>
@@ -229,17 +235,17 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="173" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
-    <state x="1160" y="749" key="RiderGenerateDialog" timestamp="1633940863232">
+    <state x="1160" y="749" key="RiderGenerateDialog" timestamp="1633949096997">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1160" y="749" key="RiderGenerateDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1633940863232" />
+    <state x="1160" y="749" key="RiderGenerateDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1633949096997" />
     <state x="207" y="270" width="2360" height="1044" key="VCS.FileHistoryDialog" timestamp="1633934613749">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="207" y="270" width="2360" height="1044" key="VCS.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1633934613749" />
-    <state x="979" y="381" width="672" height="678" key="search.everywhere.popup" timestamp="1633940807192">
+    <state x="979" y="381" width="672" height="678" key="search.everywhere.popup" timestamp="1633947583657">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="979" y="381" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1633940807192" />
+    <state x="979" y="381" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1633947583657" />
   </component>
 </project>

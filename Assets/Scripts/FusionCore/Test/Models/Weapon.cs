@@ -28,7 +28,7 @@ namespace FusionCore.Test.Models
 			_ammo = _weaponView.WeaponDescriptor.ClipSize;
 		}
 
-		public void Fire(Character character, bool hit)
+		public void Fire(CharacterModel character, bool hit)
 		{
 			if (_ammo > 0)
 			{

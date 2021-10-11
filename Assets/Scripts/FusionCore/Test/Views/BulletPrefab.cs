@@ -5,7 +5,7 @@ namespace FusionCore.Test.Views
 {
 	public class BulletPrefab : MonoBehaviour
 	{
-		private Character _target;
+		private CharacterModel _target;
 		private WeaponView _weapon;
 		private bool _hit;
 
@@ -14,7 +14,7 @@ namespace FusionCore.Test.Views
 		private float _totalDistance;
 		private float _currentDistance;
 
-		public void Init(WeaponView weapon, Character target, bool hit)
+		public void Init(WeaponView weapon, CharacterModel target, bool hit)
 		{
 			_weapon = weapon;
 			_target = target;

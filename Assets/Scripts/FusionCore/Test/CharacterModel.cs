@@ -21,6 +21,7 @@ namespace FusionCore.Test
 
             Health.Value = _characterPreset.MaxHealth;
             Health.Value = _characterPreset.MaxArmor;
+            PersonState.Value = Test.PersonState.Idle;
         }
 
         public Team Team => _team;
@@ -30,6 +31,8 @@ namespace FusionCore.Test
         public IReactiveProperty<float> Health { get; }
 
         public IReactiveProperty<float> Armor { get; }
+        
+        public IReactiveProperty<PersonState> PersonState { get; }
 
         public float AimTime => _characterPreset.AimTime;
         
