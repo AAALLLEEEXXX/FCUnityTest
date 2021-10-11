@@ -4954,18 +4954,18 @@ MonoBehaviour:
     - {fileID: 35817132}
     - {fileID: 1078861410}
     - {fileID: 1350583730}
-  - Team: 2
+  - Team: 0
     PointsView:
     - {fileID: 1024951297}
     - {fileID: 1795119211}
     - {fileID: 1890998154}
   _characters:
-  - {fileID: 7873495124653106676, guid: 863c65a426114c141af00b042e5aea54, type: 3}
-  - {fileID: 6314057881399146340, guid: 5b8a82e56e5f1874685a94ee5890a67c, type: 3}
-  - {fileID: 8106324397151360445, guid: 0a73632594d1265428ca8855defae021, type: 3}
-  - {fileID: 1552500931476317857, guid: 016747fa7c2df1646a5edd074f0d850b, type: 3}
-  - {fileID: 6969867628901760352, guid: 036f065c3b90f7b419c945fd69c41893, type: 3}
-  - {fileID: 4257496716420809272, guid: ce5bd5dac5f0c5f448c65a76852ffaba, type: 3}
+  - {fileID: 11400000, guid: 096817ab9a365cc4e83a6677fca2d075, type: 2}
+  - {fileID: 11400000, guid: f0670850d7938654a9ccbbd147b37eaf, type: 2}
+  - {fileID: 11400000, guid: 9bf1a2e6109493f45b717320b17b4f51, type: 2}
+  - {fileID: 11400000, guid: 0d223b440dc984e4980db88c57bbbc54, type: 2}
+  - {fileID: 11400000, guid: 64e747826c339074ab00d624a4cb1867, type: 2}
+  - {fileID: 11400000, guid: 56950c15e9858f14389a6097a7f19864, type: 2}
 --- !u!4 &1439739022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3662692028364167046, guid: 31360fad6811a0147a0c73dc285ef601, type: 3}

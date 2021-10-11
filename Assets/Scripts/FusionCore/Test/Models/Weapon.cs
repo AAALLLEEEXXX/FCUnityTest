@@ -1,5 +1,4 @@
-﻿using FusionCore.Test.Descriptors;
-using FusionCore.Test.Views;
+﻿using FusionCore.Test.Views;
 using UnityEngine;
 
 namespace FusionCore.Test.Models
@@ -34,26 +33,20 @@ namespace FusionCore.Test.Models
 			if (_ammo > 0)
 			{
 				_ammo -= 1;
-				FireBullet(character, hit);
+				var bullet = Object.Instantiate(_weaponView.BulletPrefab, _weaponView.BarrelTransform);
+				bullet.Init(_weaponView, character, hit);
 				_time = 1.0f / _weaponView.WeaponDescriptor.FireRate;
 				_ready = false;
 			}
 		}
-		
-		
-		private void FireBullet(Character character, bool hit)
-		{
-			var bullet = Object.Instantiate(_weaponView.BulletPrefab, _weaponView.BarrelTransform);
-			bullet.Init(_weaponView, character, hit);
-		}
 
-		public void Update(float deltaTime)
+		public void Update()
 		{
 			if (_ready) 
 				return;
 			
 			if (_time > 0)
-				_time -= deltaTime;
+				_time -= Time.deltaTime;
 			else
 				_ready = true;
 		}

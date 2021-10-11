@@ -1,5 +1,4 @@
-﻿using FusionCore.Test.Descriptors;
-using FusionCore.Test.Models;
+﻿using FusionCore.Test.Models;
 using UnityEngine;
 
 namespace FusionCore.Test.Views
@@ -39,16 +38,15 @@ namespace FusionCore.Test.Views
 			{
 				if (_hit)
 				{
-					var weaponDescriptor = _weapon.GetComponent<WeaponDescriptor>();
-					var targetDescriptor = _target.CharacterView.GetComponent<CharacterDescriptor>();
+					var weaponDescriptor = _weapon.WeaponDescriptor;
 					var damage = weaponDescriptor.Damage;
 					
-					if (_target.Armor > 0)
-						_target.Armor -= damage;
-					else if (_target.Health > 0)
-						_target.Health -= damage;
-					if (_target.Armor <= 0 && _target.Health <= 0)
-						_target.CharacterView.Animator.SetTrigger("die");
+					// if (_target.Armor > 0)
+					// 	_target.Armor -= damage;
+					// else if (_target.Health > 0)
+					// 	_target.Health -= damage;
+					// if (_target.Armor <= 0 && _target.Health <= 0)
+					// 	_target.CharacterView.Animator.SetTrigger("die");
 				}
 				Destroy(gameObject);
 			}

@@ -5,7 +5,7 @@ namespace FusionCore.Test
     [Serializable]
     public class SpawnPoint
     {
-        public uint Team;
+        public Team Team;
         public PointView[] PointsView;
     }
 }

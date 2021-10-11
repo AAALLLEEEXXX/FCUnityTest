@@ -7,10 +7,7 @@ namespace FusionCore.Test.Views
 	{
 		[SerializeField]
 		private WeaponView _weaponView;
-		
-		[SerializeField]
-		private CharacterDescriptor _characterDescriptor;
-		
+
 		[SerializeField]
 		private Animator _animator;
 
@@ -20,8 +17,6 @@ namespace FusionCore.Test.Views
 		public Animator Animator => _animator;
 		
 		public WeaponView WeaponView => _weaponView;
-		
-		public CharacterDescriptor CharacterDescriptor => _characterDescriptor;
 
 		public void Update()
 		{

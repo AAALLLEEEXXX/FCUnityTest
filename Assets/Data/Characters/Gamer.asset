@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dece43d344738c4cad9e4946b58816e, type: 3}
+  m_Name: Gamer
+  m_EditorClassIdentifier: 
+  _characterView: {fileID: 6314057881399146340, guid: 5b8a82e56e5f1874685a94ee5890a67c, type: 3}
+  _accuracy: 0.7
+  _dexterity: 0.25
+  _maxHealth: 100
+  _maxArmor: 100
+  _aimTime: 3.5

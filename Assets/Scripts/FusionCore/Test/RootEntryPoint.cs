@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using FusionCore.Test.Data;
 using FusionCore.Test.Models;
 using FusionCore.Test.Views;
 using FusionCore.Ui;
@@ -18,20 +19,20 @@ namespace FusionCore.Test
 		[SerializeField]
 		private SpawnPoint[] _spawns;
 		
-		
-		
 		[SerializeField]
-		private CharacterView[] _characters;
+		private CharacterPreset[] _characters;
 		
 		private FightController _fightController;
 		
 		private readonly CompositeDisposable _disposables = new CompositeDisposable();
 
 		private GameModel _gameModel;
+		private FightService _fightService;
 
 		private void Awake()
 		{
 			_gameModel = new GameModel();
+			_fightService = new FightService();
 		}
 
 		public void Start()
@@ -43,7 +44,7 @@ namespace FusionCore.Test
 		{
 			new MainMenuController(_mainMenuView, _gameModel).AddTo(_disposables);
 			new FightWindowController(_fightWindowView, _gameModel).AddTo(_disposables);
-			_fightController = new FightController(_gameModel, _spawns, _characters).AddTo(_disposables);
+			_fightController = new FightController(_gameModel, _fightService, _spawns, _characters).AddTo(_disposables);
 			
 		}
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FusionCore.Test.Data;
 using FusionCore.Test.Views;
 using UniRx;
 using UnityEngine;
@@ -12,21 +13,21 @@ namespace FusionCore.Test.Models
 	{
 		private readonly CompositeDisposable _disposables = new CompositeDisposable();
 		
-		
-		private readonly Dictionary<uint, List<Character>> _charactersByTeam;
+		private List<Character> _spawnCharacters = new List<Character>();
 
 		private SpawnPoint[] _spawnPoints;
-		private CharacterView[] _characters;
+		private CharacterPreset[] _characters;
+		
 		private GameModel _gameModel;
+		private FightService _fightService;
 
-		public FightController(GameModel gameModel, SpawnPoint[] spawnPoints, CharacterView[] characters)
+		public FightController(GameModel gameModel, FightService fightService, SpawnPoint[] spawnPoints, CharacterPreset[] characters)
 		{
 			_spawnPoints = spawnPoints;
 			_characters = characters;
 			_gameModel = gameModel;
+			_fightService = fightService;
 
-			_charactersByTeam = new Dictionary<uint, List<Character>>();
-			
 			gameModel.CurrentGameState.Subscribe(OnChangeGameState).AddTo(_disposables);
 			OnChangeGameState(GameState.MainMenu);
 		}
@@ -36,103 +37,51 @@ namespace FusionCore.Test.Models
 			switch (gameState)
 			{
 				case GameState.MainMenu:
-					// очищаем поле от игроков
+					ClearBattlefield();
 					break;
 				
 				case GameState.Fight:
-					Start();
-					break;
-                
-				
-				case GameState.EndFight:
+					SpawnCharactersInBattlefield(_spawnPoints, _characters);
 					break;
 			}
-		}
-
-		private void Start()
-		{
-			_charactersByTeam.Clear();
-
-			foreach (var positionsPair in _spawnPoints)
-			{
-				var positions = positionsPair.PointsView;
-				var characters = new List<Character>();
-				_charactersByTeam.Add(positionsPair.Team, characters);
-				
-				var i = 0;
-				while (i < positions.Length && _characters.Length > 0)
-				{
-					var index = Random.Range(0, _characters.Length);
-					characters.Add(CreateCharacterAt(_characters[index], this, positions[i].transform.position));
-					i++;
-				}
-			}
-		}
-
-		public bool TryGetNearestAliveEnemy(Character character, out Character target)
-		{
-			if (TryGetTeam(character, out uint team))
-			{
-				Character nearestEnemy = null;
-				var nearestDistance = float.MaxValue;
-				var enemies = team == 1 ? _charactersByTeam[2] : _charactersByTeam[1];
-				
-				foreach (var enemy in enemies)
-				{
-					if (enemy.IsAlive)
-					{
-						float distance = Vector3.Distance(character.Position, enemy.Position);
-						if (distance < nearestDistance)
-						{
-							nearestDistance = distance;
-							nearestEnemy = enemy;
-						}
-					}
-				}
-				target = nearestEnemy;
-				return target != null;
-			}
-			target = default;
-			return false;
-		}
-
-		private bool TryGetTeam(Character target, out uint team)
-		{
-			foreach (var charactersPair in _charactersByTeam)
-			{
-				var characters = charactersPair.Value;
-				
-				foreach (var character in characters)
-				{
-					if (character == target)
-					{
-						team = charactersPair.Key;
-						return true;
-					}
-				}
-			}
-			team = default;
-			return false;
 		}
 
 		public void Update()
 		{
-			if (_gameModel.CurrentGameState.Value == GameState.Fight)
+			if (_gameModel.CurrentGameState.Value != GameState.Fight) 
+				return;
+			
+			foreach (var character in _fightService.SpawnCharacters)
+				character.Update();
+		}
+
+
+		private void SpawnCharactersInBattlefield(SpawnPoint[] spawnPoints, CharacterPreset[] characters)
+		{
+			foreach (var positionsPair in spawnPoints)
 			{
-				foreach (var charactersPair in _charactersByTeam)
+				foreach (var spawn in positionsPair.PointsView)
 				{
-					var characters = charactersPair.Value;
-					
-					foreach (var character in characters)
-						character.Update(Time.deltaTime);
+					var index = Random.Range(0, characters.Length);
+					var spawnCharacter = CreateCharacterAt(characters[index], spawn.transform.position, positionsPair.Team);
+					_fightService.SpawnCharacters.Add(spawnCharacter);
 				}
 			}
 		}
 
-		private Character CreateCharacterAt(CharacterView view, FightController fightController, Vector3 position)
+		private void ClearBattlefield()
 		{
-			var character = Object.Instantiate(view, position, Quaternion.identity);
-			return new Character(character, new Weapon(character.WeaponView), fightController);
+			foreach (var character in _spawnCharacters)
+				Object.Destroy(character.CharacterView);
+            
+			_spawnCharacters.Clear();
+		}
+		
+		private Character CreateCharacterAt(CharacterPreset preset, Vector3 position, Team team)
+		{
+			var character = Object.Instantiate(preset.CharacterView, position, Quaternion.identity);
+			var characterModel = new CharacterModel(preset, team);
+			return new Character(characterModel, new Weapon(character.WeaponView));
 		}
 
 		public void Dispose()

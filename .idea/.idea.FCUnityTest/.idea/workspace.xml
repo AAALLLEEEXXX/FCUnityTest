@@ -20,30 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a837a916-5acd-46ac-bc77-b21a76eb9c4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FCUnityTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Engineer/Engineer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Engineer/Engineer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Engineer/EngineerWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Engineer/EngineerWeapon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Gamer/Gamer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Gamer/Gamer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Gamer/GamerWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Gamer/GamerWeapon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Indian/Indian.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Indian/Indian.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Indian/IndianWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Indian/IndianWeapon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Monk/Monk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Monk/Monk.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Monk/MonkWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Monk/MonkWeapon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Pirate/Pirate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Pirate/Pirate.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Pirate/PirateWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Pirate/PirateWeapon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Sniper/Sniper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Sniper/Sniper.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Sniper/SniperWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Sniper/SniperWeapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Character.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/BulletPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/BulletPrefab.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterPrefab.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterPrefab.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/WeaponPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/WeaponView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/WeaponPrefab.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/WeaponView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +41,16 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/DisposeUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/ICharacterModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CFC1AD89-0650-411E-946C-FF2E6F276711/a1/569c6f0a/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/GameModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/DisposeUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/FightWindowController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Team.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Data/CharacterPreset.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/IndicatorView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/PersonState.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -71,20 +62,33 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/MainController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/FightController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/PointView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Battlefield.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/DisposeUtils.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/FightWindowView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/MainMenuController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/FightWindowController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Ui/IndicatorView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/WeaponView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterPrefab.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/PersonState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/AimingState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Team.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/IdleState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/SpawnCharacterService.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/IFightController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/ICharacter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/FightService.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/BulletPrefab.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Views/CharacterView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Data/CharacterPreset.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/CharacterModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/ICharacterModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs" />
       </list>
     </option>
   </component>
@@ -131,7 +135,8 @@
       <option name="presentableId" value="Default" />
       <updated>1633794347335</updated>
       <workItem from="1633794356348" duration="11907000" />
-      <workItem from="1633892361878" duration="2695000" />
+      <workItem from="1633892361878" duration="8163000" />
+      <workItem from="1633933048272" duration="8655000" />
     </task>
     <servers />
   </component>
@@ -156,117 +161,85 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="496" height="464" key="DebuggerActiveHint" timestamp="1633799160524">
+    <state width="496" height="464" key="DebuggerActiveHint" timestamp="1633900811081">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="496" height="464" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1633799160524" />
-    <state width="2502" height="157" key="GridCell.Tab.0.bottom" timestamp="1633807070102">
+    <state width="496" height="464" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1633900811081" />
+    <state width="2517" height="173" key="GridCell.Tab.0.bottom" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.0.center" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.0.center" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.0.left" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.0.left" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.0.right" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.0.right" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.1.bottom" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.1.bottom" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.1.center" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.1.center" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.1.left" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.1.left" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.1.right" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.1.right" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.2.bottom" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.2.bottom" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.2.center" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.2.center" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.2.left" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.2.left" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.2.right" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.2.right" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.3.bottom" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.3.bottom" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.3.center" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.3.center" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.3.left" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.3.left" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state width="2502" height="157" key="GridCell.Tab.3.right" timestamp="1633807070102">
+    <state width="2517" height="173" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state width="2517" height="173" key="GridCell.Tab.3.right" timestamp="1633901400744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2502" height="157" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633807070102" />
-    <state x="1160" y="749" key="RiderGenerateDialog" timestamp="1633806649018">
+    <state width="2517" height="173" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1633901400744" />
+    <state x="1160" y="749" key="RiderGenerateDialog" timestamp="1633940863232">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1160" y="749" key="RiderGenerateDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1633806649018" />
-    <state x="-316" y="806" width="2360" height="1044" key="VCS.FileHistoryDialog" timestamp="1633894667622">
+    <state x="1160" y="749" key="RiderGenerateDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1633940863232" />
+    <state x="207" y="270" width="2360" height="1044" key="VCS.FileHistoryDialog" timestamp="1633934613749">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="-316" y="806" width="2360" height="1044" key="VCS.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1633894667622" />
-    <state x="979" y="381" width="672" height="678" key="search.everywhere.popup" timestamp="1633894594416">
+    <state x="207" y="270" width="2360" height="1044" key="VCS.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1633934613749" />
+    <state x="979" y="381" width="672" height="678" key="search.everywhere.popup" timestamp="1633940807192">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="979" y="381" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1633894594416" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/RootEntryPoint.cs</url>
-          <line>45</line>
-          <properties documentPath="C:\Users\Admin\Desktop\FCUnityTest\Assets\Scripts\FusionCore\Test\RootEntryPoint.cs" initialLine="56">
-            <startOffsets>
-              <option value="936" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1029" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/FusionCore/Test/Models/FightController.cs</url>
-          <line>119</line>
-          <properties documentPath="C:\Users\Admin\Desktop\FCUnityTest\Assets\Scripts\FusionCore\Test\Models\FightController.cs" initialLine="131">
-            <startOffsets>
-              <option value="2800" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2857" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="979" y="381" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1633940807192" />
   </component>
 </project>
