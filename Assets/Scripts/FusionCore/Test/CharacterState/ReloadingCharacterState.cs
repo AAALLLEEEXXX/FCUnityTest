@@ -18,7 +18,7 @@ namespace FusionCore.Test.CharacterState
         {
             _model.CharacterView.Animator.SetBool(Aiming, true);
             _model.CharacterView.Animator.SetBool(Reloading, true);
-            _model.CharacterView.Animator.SetFloat(ReloadTime, _weapon.WeaponView.WeaponDescriptor.ReloadTime / 3.3f);
+            _model.CharacterView.Animator.SetFloat(ReloadTime, _weapon.WeaponView.WeaponPreset.ReloadTime / 3.3f);
 						
             if (_time > 0)
             {

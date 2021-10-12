@@ -7,9 +7,6 @@ namespace FusionCore.Test
 {
     public class CharacterModel : ICharacterModel
     {
-        private IReactiveProperty<float> _health;
-        private float _armor;
-		
         private Team _team;
 
         private CharacterPreset _characterPreset;
@@ -28,11 +25,11 @@ namespace FusionCore.Test
         
         public CharacterView CharacterView => _characterPreset.CharacterView;
 
-        public IReactiveProperty<float> Health { get; }
+        public IReactiveProperty<float> Health { get; } = new ReactiveProperty<float>();
 
-        public IReactiveProperty<float> Armor { get; }
+        public IReactiveProperty<float> Armor { get; } = new ReactiveProperty<float>();
         
-        public IReactiveProperty<PersonState> PersonState { get; }
+        public IReactiveProperty<PersonState> PersonState { get; } = new ReactiveProperty<PersonState>();
 
         public float AimTime => _characterPreset.AimTime;
         
@@ -44,6 +41,6 @@ namespace FusionCore.Test
 
         public Vector3 Position => _characterPreset.CharacterView.transform.position;
 
-        public IReactiveProperty<CharacterModel> CurrentTarget { get; }
+        public IReactiveProperty<CharacterModel> CurrentTarget { get; } = new ReactiveProperty<CharacterModel>();
     }
 }

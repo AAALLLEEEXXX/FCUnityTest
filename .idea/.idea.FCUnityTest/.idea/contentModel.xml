@@ -19,6 +19,7 @@
               </e>
               <e p="Data" t="Include">
                 <e p="CharacterPreset.cs" t="Include" />
+                <e p="WeaponPreset.cs" t="Include" />
               </e>
               <e p="Descriptors" t="Include">
                 <e p="CharacterDescriptor.cs" t="Include" />

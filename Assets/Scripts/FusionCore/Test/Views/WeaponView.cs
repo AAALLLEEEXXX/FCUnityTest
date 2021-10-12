@@ -1,4 +1,5 @@
-﻿using FusionCore.Test.Descriptors;
+﻿using FusionCore.Test.Data;
+using FusionCore.Test.Descriptors;
 using UnityEngine;
 
 namespace FusionCore.Test.Views
@@ -12,12 +13,12 @@ namespace FusionCore.Test.Views
 		private BulletPrefab _bulletPrefab;
 
 		[SerializeField] 
-		private WeaponDescriptor _weaponDescriptor;
+		private WeaponPreset _weaponPreset;
 
 		public Transform BarrelTransform => _barrelTransform;
 		
 		public BulletPrefab BulletPrefab => _bulletPrefab;
 		
-		public WeaponDescriptor WeaponDescriptor => _weaponDescriptor;
+		public WeaponPreset WeaponPreset => _weaponPreset;
 	}
 }

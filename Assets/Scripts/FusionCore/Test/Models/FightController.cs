@@ -50,7 +50,7 @@ namespace FusionCore.Test.Models
 			if (_gameModel.CurrentGameState.Value != GameState.Fight) 
 				return;
 			
-			foreach (var character in _fightService.SpawnCharacters)
+			foreach (var character in _spawnCharacters)
 				character.Update();
 		}
 		

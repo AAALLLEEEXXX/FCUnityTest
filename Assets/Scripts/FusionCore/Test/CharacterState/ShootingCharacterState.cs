@@ -27,7 +27,7 @@ namespace FusionCore.Test.CharacterState
                     {
                         var random = Random.Range(0.0f, 1.0f);
                         var hit = random <= _model.Accuracy &&
-                                  random <= _weapon.WeaponView.WeaponDescriptor.Accuracy &&
+                                  random <= _weapon.WeaponView.WeaponPreset.Accuracy &&
                                   random >= _model.CurrentTarget.Value.Dexterity;
                         
                         _weapon.Fire(_model.CurrentTarget.Value, hit);
@@ -41,7 +41,7 @@ namespace FusionCore.Test.CharacterState
                 else
                 {
                     _model.PersonState.Value = PersonState.Reloading;
-                    _time = _weapon.WeaponView.WeaponDescriptor.ReloadTime;
+                    _time = _weapon.WeaponView.WeaponPreset.ReloadTime;
                 }
             }
             else

@@ -38,7 +38,7 @@ namespace FusionCore.Test.Views
 			{
 				if (_hit)
 				{
-					var weaponDescriptor = _weapon.WeaponDescriptor;
+					var weaponDescriptor = _weapon.WeaponPreset;
 					var damage = weaponDescriptor.Damage;
 					
 					// if (_target.Armor > 0)
