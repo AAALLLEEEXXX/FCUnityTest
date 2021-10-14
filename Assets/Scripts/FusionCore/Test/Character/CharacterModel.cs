@@ -11,10 +11,13 @@ namespace FusionCore.Test
 
         private CharacterPreset _characterPreset;
         
-        public CharacterModel(CharacterPreset characterPreset, Team team)
+        
+        public CharacterModel(CharacterPreset characterPreset, CharacterView characterView, Team team)
         {
             _characterPreset = characterPreset;
             _team = team;
+            CharacterView = characterView;
+            Position = characterView.transform.position;
 
             Health.Value = _characterPreset.MaxHealth;
             Health.Value = _characterPreset.MaxArmor;
@@ -23,7 +26,7 @@ namespace FusionCore.Test
 
         public Team Team => _team;
         
-        public CharacterView CharacterView => _characterPreset.CharacterView;
+        public CharacterView CharacterView { get; }
 
         public IReactiveProperty<float> Health { get; } = new ReactiveProperty<float>();
 
@@ -39,7 +42,7 @@ namespace FusionCore.Test
 
         public bool IsAlive => Health.Value > 0 || Armor.Value > 0;
 
-        public Vector3 Position => _characterPreset.CharacterView.transform.position;
+        public Vector3 Position { get; }
 
         public IReactiveProperty<CharacterModel> CurrentTarget { get; } = new ReactiveProperty<CharacterModel>();
     }

@@ -9,7 +9,12 @@
         <e p="Scripts" t="Include">
           <e p="FusionCore" t="Include">
             <e p="Test" t="Include">
-              <e p="CharacterModel.cs" t="Include" />
+              <e p="Character" t="Include">
+                <e p="CharacterModel.cs" t="Include" />
+                <e p="ICharacterModel.cs" t="Include" />
+                <e p="PersonState.cs" t="Include" />
+                <e p="Team.cs" t="Include" />
+              </e>
               <e p="CharacterState" t="Include">
                 <e p="AimingCharacterState.cs" t="Include" />
                 <e p="BaseCharacterState.cs" t="Include" />
@@ -28,18 +33,15 @@
               <e p="DisposeUtils.cs" t="Include" />
               <e p="FightService.cs" t="Include" />
               <e p="GameState.cs" t="Include" />
-              <e p="ICharacterModel.cs" t="Include" />
               <e p="Models" t="Include">
                 <e p="Character.cs" t="Include" />
                 <e p="FightController.cs" t="Include" />
                 <e p="GameModel.cs" t="Include" />
                 <e p="Weapon.cs" t="Include" />
               </e>
-              <e p="PersonState.cs" t="Include" />
               <e p="PointView.cs" t="Include" />
               <e p="RootEntryPoint.cs" t="Include" />
               <e p="SpawnPoint.cs" t="Include" />
-              <e p="Team.cs" t="Include" />
               <e p="Views" t="Include">
                 <e p="BulletPrefab.cs" t="Include" />
                 <e p="CharacterView.cs" t="Include" />
@@ -47,7 +49,6 @@
               </e>
             </e>
             <e p="Ui" t="Include">
-              <e p="FightWindowController.cs" t="Include" />
               <e p="FightWindowView.cs" t="Include" />
               <e p="IndicatorView.cs" t="Include" />
               <e p="MainMenuController.cs" t="Include" />

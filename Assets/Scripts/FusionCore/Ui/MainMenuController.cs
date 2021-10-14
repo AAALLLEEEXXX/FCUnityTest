@@ -20,7 +20,6 @@ namespace FusionCore.Ui
             SubscribeButtons();
             
             gameModel.CurrentGameState.Subscribe(RefreshWindow).AddTo(_disposables);
-            RefreshWindow(GameState.MainMenu);
         }
 
         private void SubscribeButtons()

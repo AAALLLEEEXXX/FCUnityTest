@@ -43,9 +43,7 @@ namespace FusionCore.Test
 		private void Initialize()
 		{
 			new MainMenuController(_mainMenuView, _gameModel).AddTo(_disposables);
-			new FightWindowController(_fightWindowView, _gameModel).AddTo(_disposables);
-			_fightController = new FightController(_gameModel, _fightService, _spawns, _characters).AddTo(_disposables);
-			
+			_fightController = new FightController(_fightWindowView, _fightService, _gameModel, _spawns, _characters).AddTo(_disposables);
 		}
 
 		public void Update()

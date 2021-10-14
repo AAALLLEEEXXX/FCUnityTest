@@ -9,19 +9,22 @@ namespace FusionCore.Test.Models
 		private Weapon _weapon;
 
 		private PersonState _personState;
-		private Character _currentTarget;
 
 		private CharacterModel _model;
 		private BaseCharacterState _baseCharacterState;
+		private FightService _fightService;
+		private GameModel _gameModel;
 
 		private readonly CompositeDisposable _disposables = new CompositeDisposable();
 		
 		public CharacterModel Model => _model;
 
-		public Character(CharacterModel model, Weapon weapon)
+		public Character(CharacterModel model, Weapon weapon, FightService fightService, GameModel gameModel)
 		{
 			_model = model;
 			_weapon = weapon;
+			_fightService = fightService;
+			_gameModel = gameModel;
 
 			_model.PersonState.Value = PersonState.Idle;
 			_model.PersonState.Subscribe(ChangePersonState).AddTo(_disposables);
@@ -35,6 +38,9 @@ namespace FusionCore.Test.Models
 			switch (_personState)
 			{
 				case PersonState.Idle:
+					if (_fightService.TryGetNearestAliveEnemyNew(_model, out var target))
+						_model.CurrentTarget.Value = target;
+
 					_baseCharacterState = new IdleCharacterState(_model);
 					break;
 					
@@ -52,11 +58,6 @@ namespace FusionCore.Test.Models
 			}
 				
 			_baseCharacterState.Something();
-		}
-
-		private void ChangeCurrentTarget(Character target)
-		{
-			_currentTarget = target;
 		}
 		
 		private void ChangePersonState(PersonState personState)
