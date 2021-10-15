@@ -9,8 +9,6 @@ namespace FusionCore.Test.CharacterState
         {
             _model = model;
             _fightService = fightService;
-            
-            _time = _model.AimTime;
         }
         
         public override void Something()
@@ -25,6 +23,8 @@ namespace FusionCore.Test.CharacterState
 			
             _model.PersonState.Value = PersonState.Aiming;
             _model.CharacterView.transform.LookAt(_model.CurrentTarget.Value.Position);
+            
+            _time = _model.AimTime;
         }
     }
 }

@@ -19,35 +19,40 @@ namespace FusionCore.Test.CharacterState
             _model.CharacterView.Animator.SetBool(Aiming, true);
             _model.CharacterView.Animator.SetBool(Reloading, false);
 			
-            if (_model.CurrentTarget.Value != null && _model.CurrentTarget.Value.IsAlive)
+            if (_model.IsHasCurrentTarget)
             {
                 if (_weaponController.HasAmmo)
-                {
-                    if (_weaponController.IsReady)
-                    {
-                        var random = Random.Range(0.0f, 1.0f);
-                        var hit = random <= _model.Accuracy &&
-                                  random <= _weaponController.WeaponView.WeaponPreset.Accuracy &&
-                                  random >= _model.CurrentTarget.Value.Dexterity;
-                        
-                        _weaponController.Fire(_model.CurrentTarget.Value, hit);
-                        _model.CharacterView.Animator.SetTrigger(Shoot);
-                    }
-                    else
-                    {
-                        _weaponController.Update();
-                    }
-                }
+                    Fire();
                 else
-                {
                     _model.PersonState.Value = PersonState.Reloading;
-                    _time = _weaponController.WeaponView.WeaponPreset.ReloadTime;
-                }
             }
             else
             {
                 _model.PersonState.Value = PersonState.Idle;
             }
+        }
+
+        private void Fire()
+        {
+            if (_weaponController.IsReady)
+            {
+                var hit = IsHitTarget();
+                        
+                _weaponController.Fire(_model.CurrentTarget.Value, hit);
+                _model.CharacterView.Animator.SetTrigger(Shoot);
+            }
+            else
+            {
+                _weaponController.Update();
+            }
+        }
+
+        private bool IsHitTarget()
+        {
+            var random = Random.Range(0.0f, 1.0f);
+            return random <= _model.Accuracy &&
+                   random <= _weaponController.WeaponView.WeaponPreset.Accuracy &&
+                   random >= _model.CurrentTarget.Value.Dexterity;
         }
     }
 }

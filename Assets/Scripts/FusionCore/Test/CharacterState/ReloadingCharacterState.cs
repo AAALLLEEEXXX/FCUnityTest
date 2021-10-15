@@ -26,10 +26,7 @@ namespace FusionCore.Test.CharacterState
             }
             else
             {
-                if (_model.CurrentTarget.Value != null && _model.CurrentTarget.Value.IsAlive)
-                    _model.PersonState.Value = PersonState.Shooting;
-                else
-                    _model.PersonState.Value = PersonState.Idle;
+                _model.PersonState.Value = _model.IsHasCurrentTarget ? PersonState.Shooting : PersonState.Idle;
 				
                 _weaponController.Reload();
                 _time = 0;

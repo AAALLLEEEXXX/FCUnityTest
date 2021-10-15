@@ -46,5 +46,7 @@ namespace FusionCore.Test
         public Vector3 Position { get; }
 
         public IReadOnlySubscriptionProperty<CharacterModel> CurrentTarget { get; }
+
+        public bool IsHasCurrentTarget => CurrentTarget.Value != null && CurrentTarget.Value.IsAlive;
     }
 }

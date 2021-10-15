@@ -28,6 +28,6 @@ namespace FusionCore.Test.Data
 
         public uint ClipSize => _clipSize;
 
-        public float ReloadTime => _reloadTime;
+        public float ReloadTime => _reloadTime / 3.3f;
     }
 }

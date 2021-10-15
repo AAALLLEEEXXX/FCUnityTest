@@ -1,6 +1,5 @@
 using FusionCore.Test.Generic;
 using FusionCore.Test.Views;
-using UniRx;
 using UnityEngine;
 
 namespace FusionCore.Test
@@ -28,5 +27,7 @@ namespace FusionCore.Test
         public IReadOnlySubscriptionProperty<CharacterModel> CurrentTarget { get; }
         
         public IReadOnlySubscriptionProperty<PersonState> PersonState { get; }
+        
+        public bool IsHasCurrentTarget { get; }
     }
 }

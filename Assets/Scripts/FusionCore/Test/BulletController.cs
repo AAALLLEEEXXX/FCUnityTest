@@ -5,7 +5,18 @@ namespace FusionCore.Test
 {
     public class BulletController
     {
+	    private static readonly int Die = Animator.StringToHash("die");
+	    
         private BulletPrefab _bulletPrefab;
+        
+        private CharacterModel _target;
+        private WeaponView _weapon;
+        private bool _hit;
+
+        private Vector3 _position;
+        private Vector3 _direction;
+        private float _totalDistance;
+        private float _currentDistance;
         
         public BulletController(BulletPrefab bulletPrefab, WeaponView weapon, CharacterModel target, bool hit)
         {
@@ -18,23 +29,12 @@ namespace FusionCore.Test
             var targetPosition = target.Position + Vector3.up * 2.0f;
             _direction = Vector3.Normalize(targetPosition - _bulletPrefab.transform.position);
             _totalDistance = Vector3.Distance(targetPosition, _bulletPrefab.transform.position);
-            _currentDistance = 0;
         }
         
-        private CharacterModel _target;
-        private WeaponView _weapon;
-        private bool _hit;
-
-        private Vector3 _position;
-        private Vector3 _direction;
-        private float _totalDistance;
-        private float _currentDistance;
-        
-        private static readonly int Die = Animator.StringToHash("die");
-
         public void Update()
         {
         	_currentDistance += Time.deltaTime * 30;
+            
         	if (_currentDistance < _totalDistance)
         	{
                 _bulletPrefab.transform.position = _position + _currentDistance * _direction;
@@ -43,15 +43,21 @@ namespace FusionCore.Test
         	{
         		if (_hit)
         		{
-        			var weaponDescriptor = _weapon.WeaponPreset;
-        			var damage = weaponDescriptor.Damage;
+	                var damage = _weapon.WeaponPreset.Damage;
         			
         			if (_target.Armor.Value > 0)
         				_target.Armor.Value -= damage;
         			else if (_target.Health.Value > 0)
         				_target.Health.Value -= damage;
-        			if (_target.Armor.Value <= 0 && _target.Health.Value <= 0)
-        				_target.CharacterView.Animator.SetTrigger(Die);
+                    
+                    if (_target.Armor.Value <= 0)
+	                    _target.Armor.Value = 0;
+
+                    if (_target.Health.Value <= 0)
+                    {
+	                    _target.Health.Value = 0;
+	                    _target.CharacterView.Animator.SetTrigger(Die);
+                    }
         		}
                 
         		Object.Destroy(_bulletPrefab);

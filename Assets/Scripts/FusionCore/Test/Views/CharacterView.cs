@@ -17,7 +17,7 @@ namespace FusionCore.Test.Views
 		
 		public WeaponView WeaponView => _weaponView;
 
-		public void Start()
+		public void Update()
 		{
 			_weaponView.transform.position = _rightPalm.position;
 			_weaponView.transform.forward = _rightPalm.up;
