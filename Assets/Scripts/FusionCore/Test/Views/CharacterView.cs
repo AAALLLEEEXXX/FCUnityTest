@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FusionCore.Ui;
+using UnityEngine;
 
 namespace FusionCore.Test.Views
 {
@@ -12,10 +13,15 @@ namespace FusionCore.Test.Views
 
 		[SerializeField]
 		private Transform _rightPalm;
+		
+		[SerializeField]
+		private CharacterUiView _characterUiView;
 
 		public Animator Animator => _animator;
 		
 		public WeaponView WeaponView => _weaponView;
+		
+		public CharacterUiView CharacterUiView => _characterUiView;
 
 		public void Update()
 		{

@@ -35,6 +35,8 @@ namespace FusionCore.Test
         
         public IReadOnlySubscriptionProperty<PersonState> PersonState { get; }
 
+        public CharacterPreset CharacterPreset => _characterPreset;
+        
         public float AimTime => _characterPreset.AimTime;
         
         public float Dexterity => _characterPreset.Dexterity;

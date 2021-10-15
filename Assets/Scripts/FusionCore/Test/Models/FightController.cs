@@ -19,17 +19,15 @@ namespace FusionCore.Test.Models
 		private CharacterPreset[] _characters;
 		
 		private GameModel _gameModel;
-
-		private FightWindowView _fightWindowView;
+		
 		private FightService _fightService;
 
-		public FightController(FightWindowView fightWindowView, FightService fightService, GameModel gameModel, 
+		public FightController(FightService fightService, GameModel gameModel, 
 			SpawnPoint[] spawnPoints, CharacterPreset[] characters)
 		{
 			_spawnPoints = spawnPoints;
 			_characters = characters;
 			_gameModel = gameModel;
-			_fightWindowView = fightWindowView;
 			_fightService = fightService;
 
 			_gameModel.CurrentGameState.SubscribeOnChange(OnChangeGameState);
@@ -41,15 +39,11 @@ namespace FusionCore.Test.Models
 			switch (gameState)
 			{
 				case GameState.MainMenu:
-					_fightWindowView.gameObject.SetActive(false);
 					ClearBattlefield();
 					break;
 				
 				case GameState.Fight:
 					SpawnCharactersInBattlefield(_spawnPoints, _characters);
-					
-					_fightWindowView.gameObject.SetActive(true);
-					RefreshFightView();
 					break;
 				
 				case GameState.EndFight:
@@ -75,17 +69,17 @@ namespace FusionCore.Test.Models
 					var index = Random.Range(0, characters.Length);
 					var spawnCharacter = CreateCharacter(characters[index], spawn.transform.position, positionsPair.Team);
 					
-					spawnCharacter.Model.Armor.SubscribeOnChange(_ =>
+					spawnCharacter.Model.Armor.SubscribeOnChange(armor =>
 					{
-						RefreshArmorView();
+						RefreshArmorView(spawnCharacter, armor);
 
 						if (!CheckTeamAlive(spawnCharacter.Model.Team))
 							_gameModel.CurrentGameState.Value = GameState.EndFight;
 					});
 					
-					spawnCharacter.Model.Health.SubscribeOnChange(_ =>
+					spawnCharacter.Model.Health.SubscribeOnChange(health =>
 					{
-						RefreshHealthView();
+						RefreshHealthView(spawnCharacter, health);
 
 						if (!CheckTeamAlive(spawnCharacter.Model.Team))
 							_gameModel.CurrentGameState.Value = GameState.EndFight;
@@ -98,45 +92,16 @@ namespace FusionCore.Test.Models
 			_fightService.UpdateSpawnCharacter(_spawnCharacters);
 		}
 
-		private void RefreshFightView()
+		private void RefreshArmorView(Character character, float armor)
 		{
-			RefreshArmorView();
-			RefreshHealthView();
-		}
-
-		private void RefreshArmorView()
-		{
-			var dataEnemy = CalculationAmountAndHealth(Team.Enemy);
-			_fightWindowView.IndicatorEnemy.SetDataArmor(dataEnemy.armor);
-			
-			var dataPlayer = CalculationAmountAndHealth(Team.Player);
-			_fightWindowView.IndicatorPlayer.SetDataArmor(dataPlayer.armor);
+			var maxArmor = character.Model.CharacterPreset.MaxArmor;
+			character.Model.CharacterView.CharacterUiView.FillArmor = armor / maxArmor;
 		}
 		
-		private void RefreshHealthView()
+		private void RefreshHealthView(Character character, float health)
 		{
-			var dataEnemy = CalculationAmountAndHealth(Team.Enemy);
-			_fightWindowView.IndicatorEnemy.SetDataHealth(dataEnemy.health);
-			
-			var dataPlayer = CalculationAmountAndHealth(Team.Player);
-			_fightWindowView.IndicatorPlayer.SetDataHealth(dataPlayer.health);
-		}
-		
-		private (float armor, float health) CalculationAmountAndHealth(Team team)
-		{
-			var countArmor = 0.0f;
-			var countHealth = 0.0f;
-			
-			foreach (var character in _spawnCharacters)
-			{
-				if (character.Model.Team == team)
-				{
-					countArmor += character.Model.Armor.Value;
-					countHealth += character.Model.Health.Value;
-				}
-			}
-			
-			return (countArmor, countHealth);
+			var maxHealth = character.Model.CharacterPreset.MaxHealth;
+			character.Model.CharacterView.CharacterUiView.FillHealth = health / maxHealth;
 		}
 
 		private bool CheckTeamAlive(Team team)
@@ -159,8 +124,8 @@ namespace FusionCore.Test.Models
 		{
 			foreach (var character in _spawnCharacters)
 			{
-				character.Model.Armor.UnSubscriptionOnChange(_ => RefreshArmorView());
-				character.Model.Health.UnSubscriptionOnChange(_ => RefreshHealthView());
+				character.Model.Armor.UnSubscriptionOnChange(armor => RefreshArmorView(character, armor));
+				character.Model.Health.UnSubscriptionOnChange(health => RefreshHealthView(character, health));
 				character.Dispose();
 				
 				Object.Destroy(character.Model.CharacterView.gameObject);
