@@ -1,6 +1,6 @@
 using FusionCore.Test.Data;
+using FusionCore.Test.Generic;
 using FusionCore.Test.Views;
-using UniRx;
 using UnityEngine;
 
 namespace FusionCore.Test
@@ -10,8 +10,7 @@ namespace FusionCore.Test
         private Team _team;
 
         private CharacterPreset _characterPreset;
-        
-        
+
         public CharacterModel(CharacterPreset characterPreset, CharacterView characterView, Team team)
         {
             _characterPreset = characterPreset;
@@ -19,20 +18,22 @@ namespace FusionCore.Test
             CharacterView = characterView;
             Position = characterView.transform.position;
 
-            Health.Value = _characterPreset.MaxHealth;
-            Health.Value = _characterPreset.MaxArmor;
-            PersonState.Value = Test.PersonState.Idle;
+            Health = new SubscriptionProperty<float> {Value = _characterPreset.MaxHealth};
+            Armor = new SubscriptionProperty<float> {Value = _characterPreset.MaxArmor};
+            
+            CurrentTarget = new SubscriptionProperty<CharacterModel>();
+            PersonState = new SubscriptionProperty<PersonState> {Value = Test.PersonState.Idle};
         }
 
         public Team Team => _team;
         
         public CharacterView CharacterView { get; }
 
-        public IReactiveProperty<float> Health { get; } = new ReactiveProperty<float>();
+        public IReadOnlySubscriptionProperty<float> Health { get; }
 
-        public IReactiveProperty<float> Armor { get; } = new ReactiveProperty<float>();
+        public IReadOnlySubscriptionProperty<float> Armor { get; }
         
-        public IReactiveProperty<PersonState> PersonState { get; } = new ReactiveProperty<PersonState>();
+        public IReadOnlySubscriptionProperty<PersonState> PersonState { get; }
 
         public float AimTime => _characterPreset.AimTime;
         
@@ -44,6 +45,6 @@ namespace FusionCore.Test
 
         public Vector3 Position { get; }
 
-        public IReactiveProperty<CharacterModel> CurrentTarget { get; } = new ReactiveProperty<CharacterModel>();
+        public IReadOnlySubscriptionProperty<CharacterModel> CurrentTarget { get; }
     }
 }

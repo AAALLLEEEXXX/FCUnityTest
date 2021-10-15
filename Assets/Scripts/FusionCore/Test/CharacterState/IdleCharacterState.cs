@@ -11,7 +11,7 @@ namespace FusionCore.Test.CharacterState
         
         public override void Something()
         {
-            if (!_model.CurrentTarget.HasValue)
+            if (_model.CurrentTarget.Value == null)
                 return;
             
             _model.CharacterView.Animator.SetBool(Aiming, false);

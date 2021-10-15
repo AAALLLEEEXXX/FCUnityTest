@@ -1,4 +1,4 @@
-using UniRx;
+using FusionCore.Test.Generic;
 
 namespace FusionCore.Test.Models
 {
@@ -6,9 +6,9 @@ namespace FusionCore.Test.Models
     {
         public GameModel()
         {
-            CurrentGameState = new ReactiveProperty<GameState>();
+            CurrentGameState = new SubscriptionProperty<GameState>();
         }
         
-        public IReactiveProperty<GameState> CurrentGameState { get; }
+        public IReadOnlySubscriptionProperty<GameState> CurrentGameState { get; }
     }
 }

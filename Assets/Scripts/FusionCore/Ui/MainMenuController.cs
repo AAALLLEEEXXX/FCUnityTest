@@ -18,8 +18,9 @@ namespace FusionCore.Ui
             _gameModel = gameModel;
             
             SubscribeButtons();
-            
-            gameModel.CurrentGameState.Subscribe(RefreshWindow).AddTo(_disposables);
+
+            _gameModel.CurrentGameState.SubscribeOnChange(RefreshWindow);
+            RefreshWindow(GameState.MainMenu);
         }
 
         private void SubscribeButtons()
@@ -66,6 +67,7 @@ namespace FusionCore.Ui
 
         public void Dispose()
         {
+            _gameModel.CurrentGameState.UnSubscriptionOnChange(RefreshWindow);
             _disposables.Clear();
         }
     }

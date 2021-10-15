@@ -32,7 +32,8 @@ namespace FusionCore.Test.Models
 			_fightWindowView = fightWindowView;
 			_fightService = fightService;
 
-			gameModel.CurrentGameState.Subscribe(OnChangeGameState).AddTo(_disposables);
+			_gameModel.CurrentGameState.SubscribeOnChange(OnChangeGameState);
+			OnChangeGameState(GameState.MainMenu);
 		}
 		
 		private void OnChangeGameState(GameState gameState)
@@ -53,26 +54,18 @@ namespace FusionCore.Test.Models
 				
 				case GameState.EndFight:
 					_fightWindowView.gameObject.SetActive(false);
+					ClearBattlefield();
 					break;
 			}
-		}
-
-		private void RefreshFightView()
-		{
-			var dataEnemy = CalculationAmountAndHealth(Team.Enemy);
-			_fightWindowView.IndicatorEnemy.SetData(dataEnemy.health, dataEnemy.armor);
-			
-			var dataPlayer = CalculationAmountAndHealth(Team.Player);
-			_fightWindowView.IndicatorPlayer.SetData(dataPlayer.health, dataPlayer.armor);
 		}
 
 		public void Update()
 		{
 			if (_gameModel.CurrentGameState.Value != GameState.Fight) 
 				return;
-			
-			foreach (var character in _spawnCharacters)
-				character.Update();
+
+			for (var i = 0; i < _spawnCharacters.Count; i++)
+				_spawnCharacters[i].Update();
 		}
 		
 		private void SpawnCharactersInBattlefield(SpawnPoint[] spawnPoints, CharacterPreset[] characters)
@@ -84,8 +77,21 @@ namespace FusionCore.Test.Models
 					var index = Random.Range(0, characters.Length);
 					var spawnCharacter = CreateCharacter(characters[index], spawn.transform.position, positionsPair.Team);
 					
-					// spawnCharacter.Model.Armor.Subscribe(_ => RefreshFightView()).AddTo(_disposables);
-					// spawnCharacter.Model.Health.Subscribe(_ => RefreshFightView()).AddTo(_disposables);
+					spawnCharacter.Model.Armor.SubscribeOnChange(_ =>
+					{
+						RefreshArmorView();
+
+						if (!CheckTeamAlive(spawnCharacter.Model.Team))
+							_gameModel.CurrentGameState.Value = GameState.EndFight;
+					});
+					
+					spawnCharacter.Model.Health.SubscribeOnChange(_ =>
+					{
+						RefreshHealthView();
+
+						if (!CheckTeamAlive(spawnCharacter.Model.Team))
+							_gameModel.CurrentGameState.Value = GameState.EndFight;
+					});
 					
 					_spawnCharacters.Add(spawnCharacter);
 				}
@@ -94,6 +100,30 @@ namespace FusionCore.Test.Models
 			_fightService.UpdateSpawnCharacter(_spawnCharacters);
 		}
 
+		private void RefreshFightView()
+		{
+			RefreshArmorView();
+			RefreshHealthView();
+		}
+
+		private void RefreshArmorView()
+		{
+			var dataEnemy = CalculationAmountAndHealth(Team.Enemy);
+			_fightWindowView.IndicatorEnemy.SetDataArmor(dataEnemy.armor);
+			
+			var dataPlayer = CalculationAmountAndHealth(Team.Player);
+			_fightWindowView.IndicatorPlayer.SetDataArmor(dataPlayer.armor);
+		}
+		
+		private void RefreshHealthView()
+		{
+			var dataEnemy = CalculationAmountAndHealth(Team.Enemy);
+			_fightWindowView.IndicatorEnemy.SetDataHealth(dataEnemy.health);
+			
+			var dataPlayer = CalculationAmountAndHealth(Team.Player);
+			_fightWindowView.IndicatorPlayer.SetDataHealth(dataPlayer.health);
+		}
+		
 		private (float armor, float health) CalculationAmountAndHealth(Team team)
 		{
 			var countArmor = 0.0f;
@@ -110,13 +140,29 @@ namespace FusionCore.Test.Models
 			
 			return (countArmor, countHealth);
 		}
-		
-		private void ClearBattlefield()
+
+		private bool CheckTeamAlive(Team team)
 		{
-			_disposables.Clear();
+			var teamAlive = false;
 			
 			foreach (var character in _spawnCharacters)
 			{
+				if (character.Model.Team != team) 
+					continue;
+				
+				if (character.Model.IsAlive)
+					teamAlive = true;
+			}
+
+			return teamAlive;
+		}
+		
+		private void ClearBattlefield()
+		{
+			foreach (var character in _spawnCharacters)
+			{
+				character.Model.Armor.UnSubscriptionOnChange(_ => RefreshArmorView());
+				character.Model.Health.UnSubscriptionOnChange(_ => RefreshHealthView());
 				character.Dispose();
 				Object.Destroy(character.Model.CharacterView);
 			}
@@ -128,11 +174,12 @@ namespace FusionCore.Test.Models
 		{
 			var character = Object.Instantiate(preset.CharacterView, position, Quaternion.identity);
 			var characterModel = new CharacterModel(preset, character, team);
-			return new Character(characterModel, new Weapon(character.WeaponView), _fightService, _gameModel);
+			return new Character(characterModel, new WeaponController(character.WeaponView), _fightService, _gameModel);
 		}
 
 		public void Dispose()
 		{
+			_gameModel.CurrentGameState.UnSubscriptionOnChange(OnChangeGameState);
 			_disposables.Clear();
 		}
 	}

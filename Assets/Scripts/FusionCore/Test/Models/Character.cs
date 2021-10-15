@@ -6,7 +6,7 @@ namespace FusionCore.Test.Models
 {
 	public class Character : IDisposable
 	{
-		private Weapon _weapon;
+		private WeaponController _weaponController;
 
 		private PersonState _personState;
 
@@ -19,15 +19,15 @@ namespace FusionCore.Test.Models
 		
 		public CharacterModel Model => _model;
 
-		public Character(CharacterModel model, Weapon weapon, FightService fightService, GameModel gameModel)
+		public Character(CharacterModel model, WeaponController weaponController, FightService fightService, GameModel gameModel)
 		{
 			_model = model;
-			_weapon = weapon;
+			_weaponController = weaponController;
 			_fightService = fightService;
 			_gameModel = gameModel;
 
 			_model.PersonState.Value = PersonState.Idle;
-			_model.PersonState.Subscribe(ChangePersonState).AddTo(_disposables);
+			_model.PersonState.SubscribeOnChange(ChangePersonState);
 		}
 
 		public void Update()
@@ -49,11 +49,11 @@ namespace FusionCore.Test.Models
 					break;
 					
 				case PersonState.Shooting:
-					_baseCharacterState = new ShootingCharacterState(_model, _weapon);
+					_baseCharacterState = new ShootingCharacterState(_model, _weaponController);
 					break;
 					
 				case PersonState.Reloading:
-					_baseCharacterState = new ReloadingCharacterState(_model, _weapon);
+					_baseCharacterState = new ReloadingCharacterState(_model, _weaponController);
 					break;
 			}
 				
@@ -67,6 +67,7 @@ namespace FusionCore.Test.Models
 
 		public void Dispose()
 		{
+			_model.PersonState.UnSubscriptionOnChange(ChangePersonState);
 			_disposables.Clear();
 		}
 	}

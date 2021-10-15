@@ -1,3 +1,4 @@
+using FusionCore.Test.Generic;
 using FusionCore.Test.Views;
 using UniRx;
 using UnityEngine;
@@ -10,9 +11,9 @@ namespace FusionCore.Test
         
         public CharacterView CharacterView { get; }
         
-        public IReactiveProperty<float> Health { get; }
+        public IReadOnlySubscriptionProperty<float> Health { get; }
         
-        public IReactiveProperty<float> Armor { get; }
+        public IReadOnlySubscriptionProperty<float> Armor { get; }
         
         public bool IsAlive { get; }
         
@@ -24,8 +25,8 @@ namespace FusionCore.Test
         
         public float Accuracy { get; }
         
-        public IReactiveProperty<CharacterModel> CurrentTarget { get; }
+        public IReadOnlySubscriptionProperty<CharacterModel> CurrentTarget { get; }
         
-        public IReactiveProperty<PersonState> PersonState { get; }
+        public IReadOnlySubscriptionProperty<PersonState> PersonState { get; }
     }
 }

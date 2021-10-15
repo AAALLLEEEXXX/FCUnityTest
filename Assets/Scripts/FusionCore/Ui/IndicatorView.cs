@@ -11,10 +11,14 @@ namespace FusionCore.Ui
         [SerializeField] 
         private TMP_Text _countArmor;
 
-        public void SetData(float countHealth, float countArmor)
+        public void SetDataArmor(float countArmor)
+        {
+            _countArmor.text = $"{countArmor} armor";
+        }
+        
+        public void SetDataHealth(float countHealth)
         {
             _countHealth.text = $"{countHealth} health";
-            _countArmor.text = $"{countArmor} armor";
         }
     }
 }

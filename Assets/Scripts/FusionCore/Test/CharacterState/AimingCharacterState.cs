@@ -16,7 +16,7 @@ namespace FusionCore.Test.CharacterState
             _model.CharacterView.Animator.SetBool(Aiming, true);
             _model.CharacterView.Animator.SetBool(Reloading, false);
 						
-            if (_model.CurrentTarget.HasValue && _model.CurrentTarget.Value.IsAlive)
+            if (_model.CurrentTarget.Value != null && _model.CurrentTarget.Value.IsAlive)
             {
                 if (_time > 0)
                 {

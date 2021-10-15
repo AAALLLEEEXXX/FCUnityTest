@@ -6,19 +6,19 @@ namespace FusionCore.Test.CharacterState
     public class ReloadingCharacterState : BaseCharacterState
     {
         private readonly CharacterModel _model;
-        private readonly Weapon _weapon;
+        private readonly WeaponController _weaponController;
         
-        public ReloadingCharacterState(CharacterModel model, Weapon weapon)
+        public ReloadingCharacterState(CharacterModel model, WeaponController weaponController)
         {
             _model = model;
-            _weapon = weapon;
+            _weaponController = weaponController;
         }
         
         public override void Something()
         {
             _model.CharacterView.Animator.SetBool(Aiming, true);
             _model.CharacterView.Animator.SetBool(Reloading, true);
-            _model.CharacterView.Animator.SetFloat(ReloadTime, _weapon.WeaponView.WeaponPreset.ReloadTime / 3.3f);
+            _model.CharacterView.Animator.SetFloat(ReloadTime, _weaponController.WeaponView.WeaponPreset.ReloadTime);
 						
             if (_time > 0)
             {
@@ -26,12 +26,12 @@ namespace FusionCore.Test.CharacterState
             }
             else
             {
-                if (_model.CurrentTarget.HasValue && _model.CurrentTarget.Value.IsAlive)
+                if (_model.CurrentTarget.Value != null && _model.CurrentTarget.Value.IsAlive)
                     _model.PersonState.Value = PersonState.Shooting;
                 else
                     _model.PersonState.Value = PersonState.Idle;
 				
-                _weapon.Reload();
+                _weaponController.Reload();
                 _time = 0;
             }
         }
