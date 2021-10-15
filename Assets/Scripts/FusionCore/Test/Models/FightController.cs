@@ -53,8 +53,6 @@ namespace FusionCore.Test.Models
 					break;
 				
 				case GameState.EndFight:
-					_fightWindowView.gameObject.SetActive(false);
-					ClearBattlefield();
 					break;
 			}
 		}
@@ -164,7 +162,8 @@ namespace FusionCore.Test.Models
 				character.Model.Armor.UnSubscriptionOnChange(_ => RefreshArmorView());
 				character.Model.Health.UnSubscriptionOnChange(_ => RefreshHealthView());
 				character.Dispose();
-				Object.Destroy(character.Model.CharacterView);
+				
+				Object.Destroy(character.Model.CharacterView.gameObject);
 			}
 			
 			_spawnCharacters.Clear();
@@ -174,7 +173,7 @@ namespace FusionCore.Test.Models
 		{
 			var character = Object.Instantiate(preset.CharacterView, position, Quaternion.identity);
 			var characterModel = new CharacterModel(preset, character, team);
-			return new Character(characterModel, new WeaponController(character.WeaponView), _fightService, _gameModel);
+			return new Character(characterModel, new WeaponController(character.WeaponView), _fightService);
 		}
 
 		public void Dispose()
