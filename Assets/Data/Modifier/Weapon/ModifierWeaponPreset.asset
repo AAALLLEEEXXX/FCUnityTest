@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d8cf87ff3473d46be9f24a6ce39ef7, type: 3}
+  m_Name: ModifierWeaponPreset
+  m_EditorClassIdentifier: 
+  _startCountModifier: 2
+  _weaponModifiers:
+  - NameModifier: MiniBuffAccurancy
+    ChangeParameter: 0
+    AddValue: 0.2
+  - NameModifier: MiniBuffFireRate
+    ChangeParameter: 1
+    AddValue: 1
+  - NameModifier: MiniBuffClipSize
+    ChangeParameter: 2
+    AddValue: 1
+  - NameModifier: MiniBuffReloadTime
+    ChangeParameter: 3
+    AddValue: -0.2
+  - NameModifier: MiddleBuffReloadTime
+    ChangeParameter: 3
+    AddValue: -0.5

@@ -16,6 +16,8 @@
                 <e p="PersonState.cs" t="Include" />
                 <e p="Team.cs" t="Include" />
               </e>
+              <e p="CharacterModifier.cs" t="Include" />
+              <e p="CharacterModifierController.cs" t="Include" />
               <e p="CharacterState" t="Include">
                 <e p="AimingCharacterState.cs" t="Include" />
                 <e p="BaseCharacterState.cs" t="Include" />
@@ -25,6 +27,8 @@
               </e>
               <e p="Data" t="Include">
                 <e p="CharacterPreset.cs" t="Include" />
+                <e p="ModifierCharacterPreset.cs" t="Include" />
+                <e p="ModifierWeaponPreset.cs" t="Include" />
                 <e p="WeaponPreset.cs" t="Include" />
               </e>
               <e p="Descriptors" t="Include">
@@ -44,6 +48,7 @@
                 <e p="GameModel.cs" t="Include" />
                 <e p="WeaponController.cs" t="Include" />
               </e>
+              <e p="ModifierType.cs" t="Include" />
               <e p="PointView.cs" t="Include" />
               <e p="RootEntryPoint.cs" t="Include" />
               <e p="SpawnPoint.cs" t="Include" />
@@ -52,9 +57,11 @@
                 <e p="CharacterView.cs" t="Include" />
                 <e p="WeaponView.cs" t="Include" />
               </e>
+              <e p="WeaponModifier.cs" t="Include" />
+              <e p="WeaponModifierController.cs" t="Include" />
             </e>
             <e p="Ui" t="Include">
-              <e p="FightWindowView.cs" t="Include" />
+              <e p="CharacterUiView.cs" t="Include" />
               <e p="IndicatorView.cs" t="Include" />
               <e p="MainMenuController.cs" t="Include" />
               <e p="MainMenuView.cs" t="Include" />

@@ -4946,6 +4946,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenuView: {fileID: 1829013401}
+  _modifierCharacterPreset: {fileID: 11400000, guid: 9e3e660d15c1b8744a339472f3bd8442, type: 2}
+  _modifierWeaponPreset: {fileID: 11400000, guid: 28b47f51d159eb5498339f8b0e6e2bcf, type: 2}
   _spawns:
   - Team: 1
     PointsView:

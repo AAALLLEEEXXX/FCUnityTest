@@ -22,14 +22,20 @@ namespace FusionCore.Test.Models
 		
 		private FightService _fightService;
 
+		private ModifierCharacterPreset _modifierCharacterPreset;
+		private ModifierWeaponPreset _modifierWeaponPreset;
+
 		public FightController(FightService fightService, GameModel gameModel, 
-			SpawnPoint[] spawnPoints, CharacterPreset[] characters)
+			SpawnPoint[] spawnPoints, CharacterPreset[] characters, 
+			ModifierCharacterPreset modifierCharacterPreset, ModifierWeaponPreset modifierWeaponPreset)
 		{
 			_spawnPoints = spawnPoints;
 			_characters = characters;
 			_gameModel = gameModel;
 			_fightService = fightService;
-
+			_modifierCharacterPreset = modifierCharacterPreset;
+			_modifierWeaponPreset = modifierWeaponPreset;
+			
 			_gameModel.CurrentGameState.SubscribeOnChange(OnChangeGameState);
 			OnChangeGameState(GameState.MainMenu);
 		}
@@ -43,6 +49,8 @@ namespace FusionCore.Test.Models
 					break;
 				
 				case GameState.Fight:
+					
+					
 					SpawnCharactersInBattlefield(_spawnPoints, _characters);
 					break;
 				
@@ -137,6 +145,8 @@ namespace FusionCore.Test.Models
 		private Character CreateCharacter(CharacterPreset preset, Vector3 position, Team team)
 		{
 			var character = Object.Instantiate(preset.CharacterView, position, Quaternion.identity);
+			new CharacterModifierController(_modifierCharacterPreset, preset);
+
 			var characterModel = new CharacterModel(preset, character, team);
 			return new Character(characterModel, new WeaponController(character.WeaponView), _fightService);
 		}

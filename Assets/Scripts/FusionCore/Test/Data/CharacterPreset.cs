@@ -26,14 +26,34 @@ namespace FusionCore.Test.Data
 
         public CharacterView CharacterView => _characterView;
 
-        public float Accuracy => _accuracy;
+        public float Accuracy
+        {
+            get => _accuracy;
+            set => _accuracy = value;
+        }
 
-        public float Dexterity => _dexterity;
+        public float Dexterity
+        {
+            get => _dexterity;
+            set => _dexterity = value;
+        }
 
-        public float MaxHealth => _maxHealth;
+        public float MaxHealth
+        {
+            get => _maxHealth;
+            set => _maxHealth = value;
+        }
 
-        public float MaxArmor => _maxArmor;
+        public float MaxArmor
+        {
+            get => _maxArmor;
+            set => _maxArmor = value;
+        }
 
-        public float AimTime => _aimTime;
+        public float AimTime
+        {
+            get => _aimTime;
+            set => _aimTime = value;
+        }
     }
 }

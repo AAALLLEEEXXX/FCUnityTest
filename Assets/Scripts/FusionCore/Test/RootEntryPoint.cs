@@ -12,6 +12,12 @@ namespace FusionCore.Test
 	{
 		[SerializeField] 
 		private MainMenuView _mainMenuView;
+		
+		[SerializeField] 
+		private ModifierCharacterPreset _modifierCharacterPreset;
+		
+		[SerializeField] 
+		private ModifierWeaponPreset _modifierWeaponPreset;
 
 		[SerializeField]
 		private SpawnPoint[] _spawns;
@@ -30,6 +36,7 @@ namespace FusionCore.Test
 		{
 			_gameModel = new GameModel();
 			_fightService = new FightService();
+			
 		}
 
 		public void Start()
@@ -40,7 +47,7 @@ namespace FusionCore.Test
 		private void Initialize()
 		{
 			new MainMenuController(_mainMenuView, _gameModel).AddTo(_disposables);
-			_fightController = new FightController(_fightService, _gameModel, _spawns, _characters).AddTo(_disposables);
+			_fightController = new FightController(_fightService, _gameModel, _spawns, _characters, _modifierCharacterPreset, _modifierWeaponPreset).AddTo(_disposables);
 		}
 
 		public void Update()
