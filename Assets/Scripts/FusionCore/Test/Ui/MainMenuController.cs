@@ -8,19 +8,25 @@ namespace FusionCore.Ui
     public class MainMenuController : IDisposable
     {
         private readonly CompositeDisposable _disposables = new CompositeDisposable();
-        
-        private MainMenuView _mainMenuView;
-        private GameModel _gameModel;
-        
+        private readonly GameModel _gameModel;
+
+        private readonly MainMenuView _mainMenuView;
+
         public MainMenuController(MainMenuView mainMenuView, GameModel gameModel)
         {
             _mainMenuView = mainMenuView;
             _gameModel = gameModel;
-            
+
             SubscribeButtons();
 
             _gameModel.CurrentGameState.SubscribeOnChange(RefreshWindow);
             RefreshWindow(GameState.MainMenu);
+        }
+
+        public void Dispose()
+        {
+            _gameModel.CurrentGameState.UnSubscriptionOnChange(RefreshWindow);
+            _disposables.Clear();
         }
 
         private void SubscribeButtons()
@@ -47,11 +53,11 @@ namespace FusionCore.Ui
                     _mainMenuView.gameObject.SetActive(true);
                     ChangeVisibleButton(true, false);
                     break;
-                
+
                 case GameState.Fight:
                     _mainMenuView.gameObject.SetActive(false);
                     break;
-                
+
                 case GameState.EndFight:
                     _mainMenuView.gameObject.SetActive(true);
                     ChangeVisibleButton(false, true);
@@ -63,12 +69,6 @@ namespace FusionCore.Ui
         {
             _mainMenuView.ContinueButton.gameObject.SetActive(isContinueButton);
             _mainMenuView.StartOverButton.gameObject.SetActive(isStartOverButton);
-        }
-
-        public void Dispose()
-        {
-            _gameModel.CurrentGameState.UnSubscriptionOnChange(RefreshWindow);
-            _disposables.Clear();
         }
     }
 }

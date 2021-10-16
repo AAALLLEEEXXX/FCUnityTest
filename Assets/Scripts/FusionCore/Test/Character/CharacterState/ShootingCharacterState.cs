@@ -7,18 +7,18 @@ namespace FusionCore.Test.CharacterState
     {
         private readonly ICharacterModel _model;
         private readonly WeaponController _weaponController;
-        
+
         public ShootingCharacterState(ICharacterModel model, WeaponController weaponController)
         {
             _model = model;
             _weaponController = weaponController;
         }
-        
+
         public override void Something()
         {
             _model.CharacterView.Animator.SetBool(Aiming, true);
             _model.CharacterView.Animator.SetBool(Reloading, false);
-			
+
             if (_model.IsHasCurrentTarget)
             {
                 if (_weaponController.HasAmmo)
@@ -37,7 +37,7 @@ namespace FusionCore.Test.CharacterState
             if (_weaponController.IsReady)
             {
                 var hit = IsHitTarget();
-                        
+
                 _weaponController.Fire(_model.CurrentTarget.Value, hit);
                 _model.CharacterView.Animator.SetTrigger(Shoot);
             }

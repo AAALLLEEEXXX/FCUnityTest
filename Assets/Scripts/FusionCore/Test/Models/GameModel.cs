@@ -8,7 +8,7 @@ namespace FusionCore.Test.Models
         {
             CurrentGameState = new SubscriptionProperty<GameState>();
         }
-        
+
         public IReadOnlySubscriptionProperty<GameState> CurrentGameState { get; }
     }
 }

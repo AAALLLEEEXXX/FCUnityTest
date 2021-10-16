@@ -6,7 +6,7 @@ namespace FusionCore.Test
     public class FightService
     {
         private List<Character> _spawnCharacters;
-        
+
         public void UpdateSpawnCharacter(List<Character> spawnCharacters)
         {
             _spawnCharacters = spawnCharacters;

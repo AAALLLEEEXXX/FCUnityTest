@@ -3,21 +3,21 @@ using UnityEngine;
 
 namespace FusionCore.Test.Views
 {
-	public class WeaponView : MonoBehaviour
-	{
-		[SerializeField]
-		private Transform _barrelTransform;
+    public class WeaponView : MonoBehaviour
+    {
+        [SerializeField] 
+        private Transform _barrelTransform;
 
-		[SerializeField]
-		private BulletPrefab _bulletPrefab;
+        [SerializeField] 
+        private BulletPrefab _bulletPrefab;
 
-		[SerializeField] 
-		private WeaponPreset _weaponPreset;
+        [SerializeField] 
+        private WeaponPreset _weaponPreset;
 
-		public Transform BarrelTransform => _barrelTransform;
-		
-		public BulletPrefab BulletPrefab => _bulletPrefab;
-		
-		public WeaponPreset WeaponPreset => _weaponPreset;
-	}
+        public Transform BarrelTransform => _barrelTransform;
+
+        public BulletPrefab BulletPrefab => _bulletPrefab;
+
+        public WeaponPreset WeaponPreset => _weaponPreset;
+    }
 }

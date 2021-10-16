@@ -5,20 +5,17 @@ namespace FusionCore.Test.Data
     [CreateAssetMenu(fileName = "WeaponPreset", menuName = "Presets/WeaponPreset", order = 1)]
     public class WeaponPreset : ScriptableObject
     {
-        [SerializeField]
-        private float _damage;
+        private const float CoefReloadTime = 3.3f;
         
-        [SerializeField]
-        private float _accuracy;
-        
-        [SerializeField]
-        private float _fireRate;
-        
-        [SerializeField]
-        private uint _clipSize;
-        
-        [SerializeField]
-        private float _reloadTime;
+        [SerializeField] private float _damage;
+
+        [SerializeField] private float _accuracy;
+
+        [SerializeField] private float _fireRate;
+
+        [SerializeField] private uint _clipSize;
+
+        [SerializeField] private float _reloadTime;
 
         public float Damage => _damage;
 
@@ -28,6 +25,6 @@ namespace FusionCore.Test.Data
 
         public uint ClipSize => _clipSize;
 
-        public float ReloadTime => _reloadTime / 3.3f;
+        public float ReloadTime => _reloadTime / CoefReloadTime;
     }
 }

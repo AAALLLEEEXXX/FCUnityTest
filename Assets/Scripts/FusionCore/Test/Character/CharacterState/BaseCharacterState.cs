@@ -10,7 +10,7 @@ namespace FusionCore.Test.CharacterState
         protected static readonly int Shoot = Animator.StringToHash("shoot");
 
         protected float _time;
-        
+
         public abstract void Something();
     }
 }

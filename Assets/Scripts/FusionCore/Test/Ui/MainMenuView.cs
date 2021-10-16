@@ -10,7 +10,7 @@ namespace FusionCore.Ui
 
         [SerializeField] 
         private Button _startOverButton;
-        
+
         public Button ContinueButton => _continueButton;
 
         public Button StartOverButton => _startOverButton;

@@ -4,9 +4,9 @@ namespace FusionCore.Test.Generic
 {
     public class SubscriptionProperty<T> : IReadOnlySubscriptionProperty<T>
     {
-        private T _value;
         private Action<T> _onChangeValue;
-      
+        private T _value;
+
         public T Value
         {
             get => _value;
@@ -28,4 +28,3 @@ namespace FusionCore.Test.Generic
         }
     }
 }
-

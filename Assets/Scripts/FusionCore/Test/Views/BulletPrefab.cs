@@ -2,8 +2,7 @@
 
 namespace FusionCore.Test.Views
 {
-	public class BulletPrefab : MonoBehaviour
-	{
-		
-	}
+    public class BulletPrefab : MonoBehaviour
+    {
+    }
 }

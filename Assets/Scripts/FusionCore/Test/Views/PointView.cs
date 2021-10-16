@@ -2,7 +2,7 @@
 
 namespace FusionCore.Test
 {
-	public class PointView : MonoBehaviour
-	{
-	}
+    public class PointView : MonoBehaviour
+    {
+    }
 }
