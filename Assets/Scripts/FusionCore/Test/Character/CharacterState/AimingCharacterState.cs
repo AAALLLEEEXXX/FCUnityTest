@@ -4,9 +4,9 @@ namespace FusionCore.Test.CharacterState
 {
     public class AimingCharacterState : BaseCharacterState
     {
-        private readonly CharacterModel _model;
+        private readonly ICharacterModel _model;
         
-        public AimingCharacterState(CharacterModel model)
+        public AimingCharacterState(ICharacterModel model)
         {
             _model = model;
         }

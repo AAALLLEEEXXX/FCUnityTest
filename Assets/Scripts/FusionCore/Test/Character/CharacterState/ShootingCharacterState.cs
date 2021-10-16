@@ -5,10 +5,10 @@ namespace FusionCore.Test.CharacterState
 {
     public class ShootingCharacterState : BaseCharacterState
     {
-        private readonly CharacterModel _model;
+        private readonly ICharacterModel _model;
         private readonly WeaponController _weaponController;
         
-        public ShootingCharacterState(CharacterModel model, WeaponController weaponController)
+        public ShootingCharacterState(ICharacterModel model, WeaponController weaponController)
         {
             _model = model;
             _weaponController = weaponController;
@@ -51,7 +51,7 @@ namespace FusionCore.Test.CharacterState
         {
             var random = Random.Range(0.0f, 1.0f);
             return random <= _model.Accuracy &&
-                   random <= _weaponController.WeaponView.WeaponPreset.Accuracy &&
+                   random <= _weaponController.WeaponModifierController.Accuracy &&
                    random >= _model.CurrentTarget.Value.Dexterity;
         }
     }

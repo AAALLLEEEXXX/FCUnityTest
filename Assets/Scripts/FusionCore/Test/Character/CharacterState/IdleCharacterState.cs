@@ -2,10 +2,10 @@ namespace FusionCore.Test.CharacterState
 {
     public class IdleCharacterState : BaseCharacterState
     {
-        private readonly CharacterModel _model;
+        private readonly ICharacterModel _model;
         private readonly FightService _fightService;
         
-        public IdleCharacterState(CharacterModel model, FightService fightService)
+        public IdleCharacterState(ICharacterModel model, FightService fightService)
         {
             _model = model;
             _fightService = fightService;

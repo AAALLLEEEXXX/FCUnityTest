@@ -12,7 +12,7 @@ namespace FusionCore.Test
             _spawnCharacters = spawnCharacters;
         }
 
-        public bool TryGetNearestAliveEnemyNew(CharacterModel character, out CharacterModel target)
+        public bool TryGetNearestAliveEnemyNew(ICharacterModel character, out ICharacterModel target)
         {
             foreach (var spawnCharacter in _spawnCharacters)
             {

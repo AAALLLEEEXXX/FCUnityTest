@@ -5,10 +5,10 @@ namespace FusionCore.Test.CharacterState
 {
     public class ReloadingCharacterState : BaseCharacterState
     {
-        private readonly CharacterModel _model;
+        private readonly ICharacterModel _model;
         private readonly WeaponController _weaponController;
         
-        public ReloadingCharacterState(CharacterModel model, WeaponController weaponController)
+        public ReloadingCharacterState(ICharacterModel model, WeaponController weaponController)
         {
             _model = model;
             _weaponController = weaponController;
@@ -18,7 +18,7 @@ namespace FusionCore.Test.CharacterState
         {
             _model.CharacterView.Animator.SetBool(Aiming, true);
             _model.CharacterView.Animator.SetBool(Reloading, true);
-            _model.CharacterView.Animator.SetFloat(ReloadTime, _weaponController.WeaponView.WeaponPreset.ReloadTime);
+            _model.CharacterView.Animator.SetFloat(ReloadTime, _weaponController.WeaponModifierController.ReloadTime);
 						
             if (_time > 0)
             {

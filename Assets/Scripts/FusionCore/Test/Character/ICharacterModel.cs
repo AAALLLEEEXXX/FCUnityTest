@@ -14,6 +14,10 @@ namespace FusionCore.Test
         
         public IReadOnlySubscriptionProperty<float> Armor { get; }
         
+        public float MaxHealth { get; }
+        
+        public float MaxArmor { get; }
+        
         public bool IsAlive { get; }
         
         public Vector3 Position { get; }
@@ -24,7 +28,7 @@ namespace FusionCore.Test
         
         public float Accuracy { get; }
         
-        public IReadOnlySubscriptionProperty<CharacterModel> CurrentTarget { get; }
+        public IReadOnlySubscriptionProperty<ICharacterModel> CurrentTarget { get; }
         
         public IReadOnlySubscriptionProperty<PersonState> PersonState { get; }
         

@@ -11,19 +11,18 @@
             <e p="Test" t="Include">
               <e p="BulletController.cs" t="Include" />
               <e p="Character" t="Include">
+                <e p="Character.cs" t="Include" />
                 <e p="CharacterModel.cs" t="Include" />
+                <e p="CharacterState" t="Include">
+                  <e p="AimingCharacterState.cs" t="Include" />
+                  <e p="BaseCharacterState.cs" t="Include" />
+                  <e p="IdleCharacterState.cs" t="Include" />
+                  <e p="ReloadingCharacterState.cs" t="Include" />
+                  <e p="ShootingCharacterState.cs" t="Include" />
+                </e>
                 <e p="ICharacterModel.cs" t="Include" />
                 <e p="PersonState.cs" t="Include" />
                 <e p="Team.cs" t="Include" />
-              </e>
-              <e p="CharacterModifier.cs" t="Include" />
-              <e p="CharacterModifierController.cs" t="Include" />
-              <e p="CharacterState" t="Include">
-                <e p="AimingCharacterState.cs" t="Include" />
-                <e p="BaseCharacterState.cs" t="Include" />
-                <e p="IdleCharacterState.cs" t="Include" />
-                <e p="ReloadingCharacterState.cs" t="Include" />
-                <e p="ShootingCharacterState.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
                 <e p="CharacterPreset.cs" t="Include" />
@@ -31,34 +30,32 @@
                 <e p="ModifierWeaponPreset.cs" t="Include" />
                 <e p="WeaponPreset.cs" t="Include" />
               </e>
-              <e p="Descriptors" t="Include">
-                <e p="CharacterDescriptor.cs" t="Include" />
-                <e p="WeaponDescriptor.cs" t="Include" />
-              </e>
-              <e p="DisposeUtils.cs" t="Include" />
-              <e p="FightService.cs" t="Include" />
+              <e p="FightController.cs" t="Include" />
               <e p="GameState.cs" t="Include" />
               <e p="Generic" t="Include">
                 <e p="IReadOnlySubscriptionProperty.cs" t="Include" />
                 <e p="SubscriptionProperty.cs" t="Include" />
               </e>
               <e p="Models" t="Include">
-                <e p="Character.cs" t="Include" />
-                <e p="FightController.cs" t="Include" />
+                <e p="FightService.cs" t="Include" />
                 <e p="GameModel.cs" t="Include" />
-                <e p="WeaponController.cs" t="Include" />
+              </e>
+              <e p="Modifier" t="Include">
+                <e p="CharacterModifier.cs" t="Include" />
+                <e p="CharacterModifierController.cs" t="Include" />
+                <e p="WeaponModifier.cs" t="Include" />
+                <e p="WeaponModifierController.cs" t="Include" />
               </e>
               <e p="ModifierType.cs" t="Include" />
-              <e p="PointView.cs" t="Include" />
               <e p="RootEntryPoint.cs" t="Include" />
               <e p="SpawnPoint.cs" t="Include" />
               <e p="Views" t="Include">
                 <e p="BulletPrefab.cs" t="Include" />
                 <e p="CharacterView.cs" t="Include" />
+                <e p="PointView.cs" t="Include" />
                 <e p="WeaponView.cs" t="Include" />
               </e>
-              <e p="WeaponModifier.cs" t="Include" />
-              <e p="WeaponModifierController.cs" t="Include" />
+              <e p="WeaponController.cs" t="Include" />
             </e>
             <e p="Ui" t="Include">
               <e p="CharacterUiView.cs" t="Include" />

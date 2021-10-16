@@ -1,6 +1,5 @@
 ﻿using System;
 using FusionCore.Test.CharacterState;
-using UniRx;
 
 namespace FusionCore.Test.Models
 {
@@ -10,15 +9,14 @@ namespace FusionCore.Test.Models
 
 		private PersonState _personState;
 
-		private CharacterModel _model;
-		private BaseCharacterState _baseCharacterState;
-		private FightService _fightService;
-
-		private readonly CompositeDisposable _disposables = new CompositeDisposable();
+		private readonly ICharacterModel _model;
+		private readonly FightService _fightService;
 		
-		public CharacterModel Model => _model;
+		private BaseCharacterState _baseCharacterState;
+		
+		public ICharacterModel Model => _model;
 
-		public Character(CharacterModel model, WeaponController weaponController, FightService fightService)
+		public Character(ICharacterModel model, WeaponController weaponController, FightService fightService)
 		{
 			_model = model;
 			_weaponController = weaponController;
@@ -63,7 +61,6 @@ namespace FusionCore.Test.Models
 		public void Dispose()
 		{
 			_model.PersonState.UnSubscriptionOnChange(ChangePersonState);
-			_disposables.Clear();
 		}
 	}
 }

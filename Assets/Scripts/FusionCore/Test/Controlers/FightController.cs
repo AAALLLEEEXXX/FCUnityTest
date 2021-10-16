@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using FusionCore.Test.Data;
-using FusionCore.Ui;
-using UniRx;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
@@ -11,8 +9,6 @@ namespace FusionCore.Test.Models
 {
 	public class FightController : IDisposable
 	{
-		private readonly CompositeDisposable _disposables = new CompositeDisposable();
-		
 		private List<Character> _spawnCharacters = new List<Character>();
 
 		private SpawnPoint[] _spawnPoints;
@@ -49,8 +45,6 @@ namespace FusionCore.Test.Models
 					break;
 				
 				case GameState.Fight:
-					
-					
 					SpawnCharactersInBattlefield(_spawnPoints, _characters);
 					break;
 				
@@ -102,13 +96,13 @@ namespace FusionCore.Test.Models
 
 		private void RefreshArmorView(Character character, float armor)
 		{
-			var maxArmor = character.Model.CharacterPreset.MaxArmor;
+			var maxArmor = character.Model.MaxArmor;
 			character.Model.CharacterView.CharacterUiView.FillArmor = armor / maxArmor;
 		}
 		
 		private void RefreshHealthView(Character character, float health)
 		{
-			var maxHealth = character.Model.CharacterPreset.MaxHealth;
+			var maxHealth = character.Model.MaxHealth;
 			character.Model.CharacterView.CharacterUiView.FillHealth = health / maxHealth;
 		}
 
@@ -145,16 +139,17 @@ namespace FusionCore.Test.Models
 		private Character CreateCharacter(CharacterPreset preset, Vector3 position, Team team)
 		{
 			var character = Object.Instantiate(preset.CharacterView, position, Quaternion.identity);
-			new CharacterModifierController(_modifierCharacterPreset, preset);
+			var characterModifierController = new CharacterModifierController(_modifierCharacterPreset, preset);
+			var characterModel = new CharacterModel(characterModifierController, character, team);
+			
+			var weaponController = new WeaponController(character.WeaponView, _modifierWeaponPreset);
 
-			var characterModel = new CharacterModel(preset, character, team);
-			return new Character(characterModel, new WeaponController(character.WeaponView), _fightService);
+			return new Character(characterModel, weaponController, _fightService);
 		}
 
 		public void Dispose()
 		{
 			_gameModel.CurrentGameState.UnSubscriptionOnChange(OnChangeGameState);
-			_disposables.Clear();
 		}
 	}
 }

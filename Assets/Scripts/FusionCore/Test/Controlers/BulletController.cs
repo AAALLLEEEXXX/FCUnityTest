@@ -7,24 +7,24 @@ namespace FusionCore.Test
     {
 	    private static readonly int Die = Animator.StringToHash("die");
 	    
-        private BulletPrefab _bulletPrefab;
+        private readonly BulletPrefab _bulletPrefab;
         
-        private CharacterModel _target;
-        private WeaponView _weapon;
-        private bool _hit;
+        private readonly ICharacterModel _target;
+        private readonly WeaponView _weapon;
+        private readonly bool _hit;
 
         private Vector3 _position;
         private Vector3 _direction;
         private float _totalDistance;
         private float _currentDistance;
         
-        public BulletController(BulletPrefab bulletPrefab, WeaponView weapon, CharacterModel target, bool hit)
+        public BulletController(BulletPrefab bulletPrefab, WeaponView weapon, ICharacterModel target, bool hit)
         {
             _bulletPrefab = bulletPrefab;
             _weapon = weapon;
             _target = target;
             _hit = hit;
-            _position = _bulletPrefab.transform.position;
+            _position = bulletPrefab.transform.position;
         	
             var targetPosition = target.Position + Vector3.up * 2.0f;
             _direction = Vector3.Normalize(targetPosition - _bulletPrefab.transform.position);
