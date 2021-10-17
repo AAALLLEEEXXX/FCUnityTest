@@ -16,6 +16,7 @@ namespace FusionCore.Test
         private readonly float _totalDistance;
         
         private float _currentDistance;
+        private bool _isDestroyBullet;
 
         public BulletController(BulletPrefab bulletPrefab, WeaponView weapon, ICharacterModel target, bool hit)
         {
@@ -26,15 +27,16 @@ namespace FusionCore.Test
             _position = bulletPrefab.transform.position;
 
             var targetPosition = target.Position + Vector3.up * 2.0f;
-            _direction = Vector3.Normalize(targetPosition - _bulletPrefab.transform.position);
-            _totalDistance = Vector3.Distance(targetPosition, _bulletPrefab.transform.position);
-
-            _currentDistance = 0;
+            _direction = Vector3.Normalize(targetPosition - bulletPrefab.transform.position);
+            _totalDistance = Vector3.Distance(targetPosition, weapon.BarrelTransform.transform.position) - 0.3f;
         }
 
         public void Update()
         {
-            _currentDistance += Time.deltaTime * 30;
+            if (_isDestroyBullet)
+                return;
+            
+            _currentDistance += Time.deltaTime * _bulletPrefab.Speed;
 
             if (_currentDistance < _totalDistance)
             {
@@ -61,7 +63,8 @@ namespace FusionCore.Test
                     }
                 }
 
-                Object.Destroy(_bulletPrefab);
+                Object.Destroy(_bulletPrefab.gameObject);
+                _isDestroyBullet = true;
             }
         }
     }

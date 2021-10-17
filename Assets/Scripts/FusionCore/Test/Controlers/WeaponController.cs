@@ -1,4 +1,5 @@
-﻿using FusionCore.Test.Data;
+﻿using System.Collections.Generic;
+using FusionCore.Test.Data;
 using FusionCore.Test.Views;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace FusionCore.Test.Models
     public class WeaponController
     {
         private uint _ammo;
-        private BulletController _bulletController;
+        private List<BulletController> _bulletControllers = new List<BulletController>();
 
         private float _time;
 
@@ -30,10 +31,14 @@ namespace FusionCore.Test.Models
         public void Reload()
         {
             _ammo = WeaponModifierController.ClipSize;
+            _bulletControllers.Clear();
         }
 
         public void Fire(ICharacterModel character, bool hit)
         {
+            if (!HasAmmo)
+                return;
+            
             CreateBullet(character, hit);
             _ammo--;
             _time = 1.0f / WeaponModifierController.FireRate;
@@ -42,11 +47,12 @@ namespace FusionCore.Test.Models
 
         public void Update()
         {
+            foreach (var bulletController in _bulletControllers)
+                bulletController?.Update();
+            
             if (IsReady)
                 return;
-
-            _bulletController?.Update();
-
+            
             if (_time > 0)
                 _time -= Time.deltaTime;
             else
@@ -56,7 +62,8 @@ namespace FusionCore.Test.Models
         private void CreateBullet(ICharacterModel character, bool hit)
         {
             var bullet = Object.Instantiate(_weaponView.BulletPrefab, _weaponView.BarrelTransform);
-            _bulletController = new BulletController(bullet, _weaponView, character, hit);
+            var bulletController = new BulletController(bullet, _weaponView, character, hit);
+            _bulletControllers.Add(bulletController);
         }
     }
 }
