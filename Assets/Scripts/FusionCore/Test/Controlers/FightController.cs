@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FusionCore.Test.Data;
+using FusionCore.Test.Views;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
@@ -75,6 +76,7 @@ namespace FusionCore.Test.Models
                 {
                     var index = Random.Range(0, characters.Length);
                     var spawnCharacter = CreateCharacter(characters[index], spawn.transform.position, positionsPair.Team);
+                    RefreshColorHealthBar(spawnCharacter.Model);
 
                     spawnCharacter.Model.Armor.SubscribeOnChange(armor =>
                     {
@@ -150,6 +152,11 @@ namespace FusionCore.Test.Models
             var weaponController = new WeaponController(character.WeaponView, _modifierWeaponPreset);
 
             return new Character(characterModel, weaponController, _fightService);
+        }
+
+        private void RefreshColorHealthBar(ICharacterModel model)
+        {
+            model.CharacterView.CharacterUiView.ColorHealthBar = model.Team == Team.Player ? Color.green : Color.red;
         }
     }
 }

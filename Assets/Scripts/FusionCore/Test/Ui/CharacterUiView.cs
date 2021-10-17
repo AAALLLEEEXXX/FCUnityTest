@@ -36,5 +36,10 @@ namespace FusionCore.Ui
                     _imageHealth.fillAmount = value;
             }
         }
+
+        public Color ColorHealthBar
+        {
+            set => _imageHealth.color = value;
+        }
     }
 }
