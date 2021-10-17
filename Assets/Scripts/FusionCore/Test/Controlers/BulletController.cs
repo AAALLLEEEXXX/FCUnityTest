@@ -9,14 +9,13 @@ namespace FusionCore.Test
 
         private readonly BulletPrefab _bulletPrefab;
         private readonly bool _hit;
-
         private readonly ICharacterModel _target;
         private readonly WeaponView _weapon;
-        private float _currentDistance;
         private readonly Vector3 _direction;
-
         private readonly Vector3 _position;
         private readonly float _totalDistance;
+        
+        private float _currentDistance;
 
         public BulletController(BulletPrefab bulletPrefab, WeaponView weapon, ICharacterModel target, bool hit)
         {
@@ -29,6 +28,8 @@ namespace FusionCore.Test
             var targetPosition = target.Position + Vector3.up * 2.0f;
             _direction = Vector3.Normalize(targetPosition - _bulletPrefab.transform.position);
             _totalDistance = Vector3.Distance(targetPosition, _bulletPrefab.transform.position);
+
+            _currentDistance = 0;
         }
 
         public void Update()

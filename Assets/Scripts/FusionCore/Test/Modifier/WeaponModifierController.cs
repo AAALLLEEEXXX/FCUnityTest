@@ -46,19 +46,19 @@ namespace FusionCore.Test
             switch (weaponModifier.ChangeParameter)
             {
                 case WeaponModifierType.Accuracy:
-                    _modifierAccuracy = weaponModifier.AddValue;
+                    _modifierAccuracy += weaponModifier.AddValue;
                     break;
 
                 case WeaponModifierType.FireRate:
-                    _modifierFireRate = weaponModifier.AddValue;
+                    _modifierFireRate += weaponModifier.AddValue;
                     break;
 
                 case WeaponModifierType.ClipSize:
-                    _modifierClipSize = (uint) weaponModifier.AddValue;
+                    _modifierClipSize += (uint) weaponModifier.AddValue;
                     break;
 
                 case WeaponModifierType.ReloadTime:
-                    _modifierReloadTime = weaponModifier.AddValue;
+                    _modifierReloadTime += weaponModifier.AddValue;
                     break;
             }
         }

@@ -50,23 +50,23 @@ namespace FusionCore.Test
             switch (characterModifier.ChangeParameter)
             {
                 case CharacterModifierType.Accuracy:
-                    _modifierAccuracy = characterModifier.AddValue;
+                    _modifierAccuracy += characterModifier.AddValue;
                     break;
 
                 case CharacterModifierType.Dexterity:
-                    _modifierDexterity = characterModifier.AddValue;
+                    _modifierDexterity += characterModifier.AddValue;
                     break;
 
                 case CharacterModifierType.MaxHealth:
-                    _modifierMaxHealth = characterModifier.AddValue;
+                    _modifierMaxHealth += characterModifier.AddValue;
                     break;
 
                 case CharacterModifierType.MaxArmor:
-                    _modifierMaxArmor = characterModifier.AddValue;
+                    _modifierMaxArmor += characterModifier.AddValue;
                     break;
 
                 case CharacterModifierType.AimTime:
-                    _modifierAimTime = characterModifier.AddValue;
+                    _modifierAimTime += characterModifier.AddValue;
                     break;
             }
         }
